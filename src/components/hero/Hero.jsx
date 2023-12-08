@@ -1,4 +1,7 @@
 import { NavLink } from "react-router-dom"
+import { connect, useSelector } from "react-redux";
+import { loadProducts } from "../../redux/actions/product-action";
+import bannerImage  from "../../assets/images/banner.png"
 import "./Hero.scss"
 
 // SWIPER CONNECT
@@ -6,7 +9,17 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-const Hero = () => {
+import { useEffect } from "react";
+
+const Hero = (props) => {
+
+    useEffect(() => {
+        props.loadProducts()
+    }, [])
+
+    const {products_data} = useSelector(state => state.products)
+    console.log(products_data.slice(0, 10));
+
   return (
     <header>
         <div className="hero__navbar">
@@ -24,33 +37,13 @@ const Hero = () => {
             </ul>
         </div>
 
-        <Swiper
-        spaceBetween={30}
-        centeredSlides={true}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
-        pagination={{
-          clickable: true,
-        }}
-        navigation={false}
-        modules={[Autoplay, Pagination]}
-        className="mySwiper"
-      >
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
-      </Swiper>
+    <div className="hero__banner">
+      <img src={bannerImage} alt="Banner" />
+    </div>
+      
 
     </header>
   )
 }
 
-export default Hero
+export default connect(null, {loadProducts})(Hero)

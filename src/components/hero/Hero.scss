@@ -34,31 +34,33 @@ header{
         }
     }
 }
-
+.hero__banner{
+    width: 1200px;
+    margin: 20px auto;
+    img{
+        width: 100%;
+        object-fit: cover;
+    }
+}
 // SWIPERS STYLES
 
 .swiper {
-    width: 100%;
+    width: 1200px;
+    border: 1px solid black;
+    height: 450px;
     margin: auto;
-    height: 580px;
+    overflow: hidden;
+    img{
+        width: 100%;
+        object-fit: cover;
+        
+    }
+}
+.swiper-slide{
     background-color: red;
-  }
+}
+
+
   
-  .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-  
-    /* Center slide text vertically */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+
   
