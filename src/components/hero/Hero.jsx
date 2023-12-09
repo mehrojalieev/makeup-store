@@ -9,9 +9,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const Hero = (props) => {
+
 
     useEffect(() => {
         props.loadProducts()
@@ -23,16 +24,16 @@ const Hero = (props) => {
     <header>
         <div className="hero__navbar">
             <ul className="hero__menu">
-                <li><NavLink end className={({isActive}) => isActive ? "hero__nav-item hero__nav-item--active" : "hero__nav-item"}>Blush</NavLink></li>
-                <li><NavLink className={({isActive}) => isActive ? "hero__nav-item hero__nav-item--active" : "hero__nav-item"}>Bronzer</NavLink></li>
-                <li><NavLink className={({isActive}) => isActive ? "hero__nav-item hero__nav-item--active" : "hero__nav-item"}>Eyebrow</NavLink></li>
-                <li><NavLink className={({isActive}) => isActive ? "hero__nav-item hero__nav-item--active" : "hero__nav-item"}>Eyeliner</NavLink></li>
-                <li><NavLink className={({isActive}) => isActive ? "hero__nav-item hero__nav-item--active" : "hero__nav-item"}>Eyeshadow</NavLink></li>
-                <li><NavLink className={({isActive}) => isActive ? "hero__nav-item hero__nav-item--active" : "hero__nav-item"}>Foundation</NavLink></li>
-                <li><NavLink className={({isActive}) => isActive ? "hero__nav-item hero__nav-item--active" : "hero__nav-item"}>Lip liner</NavLink></li>
-                <li><NavLink className={({isActive}) => isActive ? "hero__nav-item hero__nav-item--active" : "hero__nav-item"}>Lipstick</NavLink></li>
-                <li><NavLink className={({isActive}) => isActive ? "hero__nav-item hero__nav-item--active" : "hero__nav-item"}>Mascara</NavLink></li>
-                <li><NavLink className={({isActive}) => isActive ? "hero__nav-item hero__nav-item--active" : "hero__nav-item"}>Nail polish</NavLink></li>
+                <li><NavLink end className={({isActive}) => isActive ? "hero__nav-item hero__nav-item--active" : "hero__nav-item"} to="">Blush</NavLink></li>
+                <li><NavLink className={({isActive}) => isActive ? "hero__nav-item hero__nav-item--active" : "hero__nav-item"} to="">Bronzer</NavLink></li>
+                <li><NavLink className={({isActive}) => isActive ? "hero__nav-item hero__nav-item--active" : "hero__nav-item"} to="">Eyebrow</NavLink></li>
+                <li><NavLink className={({isActive}) => isActive ? "hero__nav-item hero__nav-item--active" : "hero__nav-item"} to="">Eyeliner</NavLink></li>
+                <li><NavLink className={({isActive}) => isActive ? "hero__nav-item hero__nav-item--active" : "hero__nav-item"} to="">Eyeshadow</NavLink></li>
+                <li><NavLink className={({isActive}) => isActive ? "hero__nav-item hero__nav-item--active" : "hero__nav-item"} to="">Foundation</NavLink></li>
+                <li><NavLink className={({isActive}) => isActive ? "hero__nav-item hero__nav-item--active" : "hero__nav-item"} to="">Lip liner</NavLink></li>
+                <li><NavLink className={({isActive}) => isActive ? "hero__nav-item hero__nav-item--active" : "hero__nav-item"} to="">Lipstick</NavLink></li>
+                <li><NavLink className={({isActive}) => isActive ? "hero__nav-item hero__nav-item--active" : "hero__nav-item"} to="">Mascara</NavLink></li>
+                <li><NavLink className={({isActive}) => isActive ? "hero__nav-item hero__nav-item--active" : "hero__nav-item"} to="">Nail polish</NavLink></li>
             </ul>
         </div>
 

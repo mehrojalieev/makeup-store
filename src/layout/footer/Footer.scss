@@ -1,0 +1,71 @@
+@mixin f-style($fSize, $color, $fWeight){
+    font-size: $fSize;
+    color: $color;
+    font-weight: $fWeight;
+}
+footer{
+    width: 100%;
+    height: auto;
+    padding: 10px 15px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.footer-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    margin: auto;
+    padding: 0px 10px;
+}
+.footer-menu{
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    ul{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        li{
+            @include f-style(18px, #000, 500);
+            list-style-type: none;
+        }
+    }
+}
+
+.footer-action{
+    width: 350px;
+    .number{
+        @include f-style(20px, #000, 500);
+    }
+}
+.email-action{
+    display: flex;
+    height: 50px;
+    border: 1px solid black;
+    overflow: hidden;
+    border-radius: 6px;
+    margin-top: 10px;
+    &:focus {
+        box-shadow: 0 0 5px gray;
+    }
+    input{
+        @include f-style(19px, #000 , 400);
+        border: none;
+        outline: none;
+        height: 100%;
+        flex: 1;
+        text-indent: 10px;
+    }
+    button{
+        border: none;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        height: 100%;
+        padding: 0px 20px;
+        background: #000;
+        @include f-style(20px, #fff, 500);
+    }
+}
