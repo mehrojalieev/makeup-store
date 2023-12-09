@@ -97,8 +97,7 @@ main{
   transition: 0.2s;
   &:hover{
     transform: scale(1.02);
-    color: red;
-    cursor: pointer;
+    background-color: red;
   }
 }
 

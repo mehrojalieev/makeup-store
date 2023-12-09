@@ -44,6 +44,20 @@ header{
 }
 // SWIPERS STYLE
 
+.hero-swiper{
+    height: 580px !important;
+
+}
+.swiper-card{
+    width: 100%;
+  img{
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+  }
+}
+
+
 
 
   

@@ -61,7 +61,7 @@ const Main = () => {
                 </div>
                 <h3 className="product-name">{product.name.slice(0, 15)}</h3>
                 {
-                  product ? <p className="product-description">{parse(product.description.slice(0, 25))}</p>
+                  product.description  ? <p className="product-description">{parse(product.description.slice(0, 25))}</p>
                     : <p>Lorem ipsum dolor sit amet consectetur.</p>
                 }
                 <div className="price-action">
