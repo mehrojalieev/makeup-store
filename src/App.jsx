@@ -4,6 +4,7 @@ import { instance } from './api';
 import RouteController from './routes/RouteController';
 import {connect, useSelector } from 'react-redux';
 import { loadProducts } from './redux/actions/product-action';
+import Nav from './layout/nav/Nav';
 
 function App(props) {
 
@@ -14,6 +15,7 @@ function App(props) {
   }, [])
   return (
     <div className="App">
+      <Nav/>
       <RouteController/>
     </div>
   );

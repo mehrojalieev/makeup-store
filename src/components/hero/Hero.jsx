@@ -57,12 +57,12 @@ const Hero = (props) => {
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper hero-swiper"
       >
-        <SwiperSlide data-swiper-autoplay="2000" className="swiper-card"><img src="https://img.freepik.com/free-vector/perfume-bottle-black-silk-fabric-background_107791-1629.jpg" alt="" /></SwiperSlide>
+        <SwiperSlide data-swiper-autoplay="2000" className="swiper-card"><img src="https://i.makeupstore.uz/1/1n/1nshgtwiph7g.jpg" alt="" /></SwiperSlide>
         <SwiperSlide data-swiper-autoplay="2000" className="swiper-card"><img src={bannerImage} alt="" /></SwiperSlide>
-        <SwiperSlide data-swiper-autoplay="2000" className="swiper-card"><img src="https://cdn2.f-cdn.com/contestentries/324803/15600593/568bba204abda_thumb900.jpg" alt="" /></SwiperSlide>
         <SwiperSlide data-swiper-autoplay="2000" className="swiper-card"><img src="https://c8.alamy.com/comp/2M3E26H/sale-banner-with-cosmetic-products-on-black-draped-silk-fabric-vector-realistic-brand-poster-with-luxury-makeup-and-skincare-products-lipstick-and-perfume-bottle-special-offer-promo-background-2M3E26H.jpg" alt="" /></SwiperSlide>
-        <SwiperSlide data-swiper-autoplay="2000" className="swiper-card"><img src="https://png.pngtree.com/template/20220331/ourmid/pngtree-original-french-imported-splashing-red-perfume-banner-image_910067.jpg" alt="" /></SwiperSlide>
+        <SwiperSlide data-swiper-autoplay="2000" className="swiper-card"><img src="https://i.makeupstore.uz/c/cf/cfpcwugzzwxw.jpg" alt="" /></SwiperSlide>
         <SwiperSlide data-swiper-autoplay="2000" className="swiper-card"><img src="https://t4.ftcdn.net/jpg/03/62/51/01/360_F_362510186_nbRqru6Jdiuf1rS6O42CqUi5mLQPG6Mu.jpg" alt="" /></SwiperSlide>
+        <SwiperSlide data-swiper-autoplay="2000" className="swiper-card"><img src="https://i.makeupstore.uz/l/lh/lhmzvn7e56y0.jpg" alt="" /></SwiperSlide>
         
       </Swiper>
     </div>

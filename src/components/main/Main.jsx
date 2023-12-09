@@ -17,8 +17,7 @@ import { Link } from "react-router-dom";
 const Main = (props) => {
 
   const { products_data } = useSelector(state => state.products)
-const cart = useSelector(state => state.carts)
-console.log(cart);
+
 
   useEffect(() => {
     props.loadCarts()
@@ -31,7 +30,7 @@ console.log(cart);
 
 
   const handleCart = (product) => {
-    console.log(product);
+    // console.log(product);
     props.loadCarts(product)
     console.log(loadCarts);
   }
@@ -72,7 +71,7 @@ console.log(cart);
                   {product.price !== "0.0" ? <p>{product.price} $</p> : <p>{randomNumb} $</p>}
                 </div>
                 <div className="add-cart-btn">
-                  <button onClick={(e) => handleCart(e,product)}>Add to card</button>
+                  <button onClick={() => handleCart(product)}>Add to card</button>
                 </div>
               </SwiperSlide>
 
