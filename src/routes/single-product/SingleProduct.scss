@@ -1,0 +1,157 @@
+@mixin f-style($fSize, $color, $fWeight){
+    font-size: $fSize;
+    color: $color;
+    font-weight: $fWeight;
+}
+
+.product__wrapper{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+width: 100%;
+max-width: 1250px;
+height: 500px;
+margin: 50px auto 0 ;
+}
+
+.product-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    width: 370px;
+    height: 100%;
+    h3{
+        letter-spacing: 1px;
+        @include f-style(30px, #000, 600);
+    }
+    p{
+        @include f-style(20px, #969696, 500);
+    }
+    .icons{
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        i{
+            font-size: 20px;
+            color: rgb(0, 0, 0);
+        }
+    }
+}
+.product-image{
+    width: 480px;
+    height: 100%;
+    overflow: hidden;
+    margin-right: 10px;
+    img{
+        width: 100%;
+        aspect-ratio: 1/1;
+        transition: 0.2s;
+        &:hover{
+            cursor: zoom-in;
+            transform: scale(1.08);
+        }
+    }
+}
+.product__actions-container{
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    gap: 10px ; 
+    justify-content: center;
+    width: 300px;
+    height: 100%;
+    strong{
+        @include f-style(30px, #000, 600);
+    }
+    .price-text{
+        margin-top: 15px;
+    }
+}
+
+.btn-actions{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    margin-top: 20px;
+    button{
+        font-size: 20px;
+        width: 300px;
+        border: 1px solid #000000;
+        border-radius: 5px;
+        padding: 10px 0;
+        background: transparent;
+        transition: 0.2s;
+    }
+    button:first-child{
+        background-color: #000;
+        color: #fff;
+        &:hover{
+            opacity: 0.8;
+            cursor: pointer;
+        }
+    }
+    button:last-child{
+        background-color: transparent;
+        color: #000000;
+        &:hover{
+            transform: scale(1.05);
+            cursor: pointer;
+            background-color: #000;
+            color: #fff;
+        }
+    }
+}
+.brand{
+    strong{
+        color: #969696;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 18px;
+    }
+    h3{
+        font-size:24px;
+        text-transform: uppercase;
+    }
+}
+
+.service{
+    display: flex;
+    padding: 7px;
+    // align-items: center;
+    gap: 0px 10px;
+    margin-top: 10px;
+    i{
+        margin-top: 3px;
+        color: blue;
+        font-size: 20px;
+    }
+    p{
+        color: blue;
+        font-size: 20px;
+        letter-spacing: 1px;
+    }
+}
+
+.chegirma{
+    width: 100%;
+    height: 45px;
+    border-radius: 5px;
+    background-color: blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    gap: 5px;
+    span{
+        font-weight: 600;
+        font-size: 20px;
+        color: #fff;
+        letter-spacing: 1px;
+    }
+    b{color: gold; font-size: 24px;}
+}
