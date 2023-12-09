@@ -1,36 +1,39 @@
 import { connect, useSelector } from "react-redux"
 import { loadProducts } from "../../redux/actions/product-action"
+import { useEffect, useState } from "react";
 import "./Main.scss"
 import parse from "html-react-parser"
 import { FaRegHeart } from "react-icons/fa";
+import { loadCarts } from "../../redux/actions/cart-action";
 
-
+// SWIPER
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
-
-
-// import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import { Link } from "react-router-dom";
-import { useState } from "react";
 
 
-const Main = () => {
-
+const Main = (props) => {
 
   const { products_data } = useSelector(state => state.products)
-  console.log(products_data);
+const cart = useSelector(state => state.carts)
+console.log(cart);
 
+  useEffect(() => {
+    props.loadCarts()
+  }, [])
+  // console.log(products_data);
 
+  const [randomNumb, SetnandomNumb] = useState(Math.floor(Math.random() * 50))
   const [openLike, setOpenLike] = useState(false)
-  const handleHoverImage = (id) => {
-    console.log(id);
-    if(id){
-      setOpenLike(true)
-    }
+
+
+
+  const handleCart = (product) => {
+    console.log(product);
+    props.loadCarts(product)
+    console.log(loadCarts);
   }
 
 
@@ -55,21 +58,21 @@ const Main = () => {
               <SwiperSlide key={product.id}>
                 <div className="card-image">
                   <Link to={`single-product/${product.id}`}>
-                    <img  onMouseEnter={() =>handleHoverImage(product.id)} src={product.api_featured_image} alt="Image" />
+                    <img  src={product.api_featured_image} alt="Image" />
                   </Link>
                   <button style={openLike ? {display: "block"} : {display: "none"}} className="like-btn"><FaRegHeart /></button>
                 </div>
                 <h3 className="product-name">{product.name.slice(0, 15)}</h3>
                 {
-                  product ? <p className="product-description">{parse(product.description.slice(0, 25))}</p>
+                  product.description  ? <p className="product-description">{parse(product.description.slice(0, 25))}</p>
                     : <p>Lorem ipsum dolor sit amet consectetur.</p>
                 }
                 <div className="price-action">
                   <strong>Price</strong>
-                  <p>{product.price} $</p>
+                  {product.price !== "0.0" ? <p>{product.price} $</p> : <p>{randomNumb} $</p>}
                 </div>
                 <div className="add-cart-btn">
-                  <button>Add to card</button>
+                  <button onClick={(e) => handleCart(e,product)}>Add to card</button>
                 </div>
               </SwiperSlide>
 
@@ -82,4 +85,4 @@ const Main = () => {
   )
 }
 
-export default connect(null, { loadProducts })(Main)
+export default connect(null, { loadProducts, loadCarts })(Main)

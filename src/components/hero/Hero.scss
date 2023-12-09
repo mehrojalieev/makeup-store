@@ -35,7 +35,8 @@ header{
     }
 }
 .hero__banner{
-    width: 1200px;
+    // width: 1200px;
+    width: 100%;
     margin: 20px auto;
     img{
         width: 100%;
@@ -43,6 +44,20 @@ header{
     }
 }
 // SWIPERS STYLE
+
+.hero-swiper{
+    height: 560px !important;
+
+}
+.swiper-card{
+    width: 100%;
+  img{
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+  }
+}
+
 
 
 

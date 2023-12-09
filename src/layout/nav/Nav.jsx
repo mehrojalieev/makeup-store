@@ -4,6 +4,7 @@ import { IoCartOutline } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa";
 
 import NavLogo from "../../assets/images/logo.svg"
+import { Link } from "react-router-dom";
 const Nav = () => {
   return (
     <nav>
@@ -17,7 +18,7 @@ const Nav = () => {
 
 
         <div className="nav__actions">
-          <i><IoCartOutline /></i>
+          <Link to={"/cart"} ><i><IoCartOutline /></i></Link>
         <i><FaRegHeart/></i>
         </div>
 

@@ -51,6 +51,7 @@ main{
     width: 100%;
     height: 100%;
     transition: 0.3s;
+    transform: scale(1.06);
     &:hover{
       transform: scale(1.1);
     }
@@ -97,8 +98,7 @@ main{
   transition: 0.2s;
   &:hover{
     transform: scale(1.02);
-    color: red;
-    cursor: pointer;
+    background-color: red;
   }
 }
 
