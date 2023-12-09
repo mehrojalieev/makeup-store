@@ -8,7 +8,6 @@ import { loadProducts } from './redux/actions/product-action';
 function App(props) {
 
   const {products_data} = useSelector(state => state.products )
-  console.log(products_data);
 
   useEffect(() => {
     props.loadProducts()

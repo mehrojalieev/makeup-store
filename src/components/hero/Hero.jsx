@@ -18,7 +18,6 @@ const Hero = (props) => {
     }, [])
 
     const {products_data} = useSelector(state => state.products)
-    console.log(products_data.slice(0, 10));
 
   return (
     <header>
