@@ -1,0 +1,6 @@
+1. Navbar
+1. Hero (Connect Swiper and Use RTK-query)
+1. Main(Render the Product with Swiper to look beautifully)
+1. Navbar
+1. Navbar
+1. Navbar

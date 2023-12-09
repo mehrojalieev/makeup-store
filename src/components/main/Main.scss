@@ -1,0 +1,105 @@
+@mixin f-style($fSize, $color, $fWeight){
+    font-size: $fSize;
+    color: $color;
+    font-weight: $fWeight;
+}
+main{
+  width: 1200px;
+  height: 500px;
+  margin: auto;
+}
+
+
+.swiper {  
+  width: 100%;
+  height: 450px;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  border-radius: 5px;
+  margin-top: 5px;
+  box-shadow:  0 0 5px rgba(128, 128, 128, 0.571);
+  .product-name{
+    margin-left: 10px;
+    @include f-style(16px, #000, 500 );
+    margin-top: 14px;
+  }
+  .product-description{
+    margin-left: 10px;
+    @include f-style(15px, --smoke-color, 400 );
+    margin-top: 5px;
+  }
+}
+
+.card-image{
+  position: relative;
+  width: 100%;
+  height: 280px;
+  padding: 7px 3px;
+  border-radius: 2px;
+  box-shadow: 0 0 1px gray;
+  overflow: hidden;
+
+  img{
+    width: 100%;
+    height: 100%;
+    transition: 0.3s;
+    &:hover{
+      transform: scale(1.1);
+    }
+  }
+}
+
+.price-action{
+  width: 100%;
+  display: flex;
+  padding: 0px 10px;
+  margin-top: 5px;
+  justify-content: space-between;
+  strong{
+    @include f-style(19px, red, 600 !important) ;
+  }
+  p{
+    font-size: 19px;
+    letter-spacing: 1px;
+    @include f-style((19px), #000, 500);
+  }
+}
+.add-cart-btn{
+  margin-top: 8px;
+  width: 100%; 
+  padding: 0 10px ;
+  button{
+    border-radius: 5px; 
+    border: none;
+    padding: 4px 0;
+    width: 100%;
+    background-color: #000;
+    height: 100%;
+  @include f-style(20px, #fff, 500);
+
+  }
+}
+
+.like-btn{
+  top: 8px ; right: 10px;
+  position: absolute;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  transition: 0.2s;
+  &:hover{
+    transform: scale(1.02);
+    color: red;
+    cursor: pointer;
+  }
+}
+
+

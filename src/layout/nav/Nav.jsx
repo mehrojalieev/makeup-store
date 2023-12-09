@@ -11,10 +11,10 @@ const Nav = () => {
         <i><IoIosSearch/></i>
         <input type="text"  />
       </div>
+        <div className="nav__logo">
+          <img src={NavLogo} alt="MAKEUP-LOGO" />
+        </div>
 
-      <div className="nav__logo">
-        <img src={NavLogo} alt="MAKEUP-LOGO" />
-      </div>
 
         <div className="nav__actions">
           <i><IoCartOutline /></i>
