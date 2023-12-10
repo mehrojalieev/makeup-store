@@ -3,14 +3,14 @@ const initialState = {
 }
 
 
-const loadCartsReducer = (state = initialState, {type, payload}) => {
-    console.log(payload);
-    switch(type){
+const loadCartsReducer = (state = initialState, action) => {
+    console.log(action?.payload?.getCart);
+    switch(action.type){
         case "ADD_TO_CART": 
         return{
-
-            cart_data : [...state.cart_data, payload?.getCart]
-        }
+            cart_data : state.cart_data && [...state.cart_data, action?.payload?.getCart] 
+        }   
+       
         default: return state
     }
 }

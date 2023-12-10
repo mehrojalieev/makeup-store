@@ -4,7 +4,22 @@ import { FaRegHeart, FaShoppingCart, FaHeart, FaRegUser, FaStar  } from "react-i
 
 import NavLogo from "../../assets/images/logo.svg"
 import { Link } from "react-router-dom";
-const Nav = () => {
+import { useEffect, useState } from "react";
+import { connect, useSelector } from "react-redux";
+import { loadCurrency } from "../../redux/actions/currency-action";
+
+const Nav = (props) => {
+
+const [getCurrency, setGetCurrency] = useState('')
+console.log(getCurrency);
+
+
+const {currency_data} = useSelector(state => state.currency)
+
+useEffect(() => {
+  props.loadCurrency(getCurrency)
+}, [getCurrency])
+// export {setGetCurrency}
   return (
     <>
     <div className="nav-header">
@@ -15,11 +30,16 @@ const Nav = () => {
         <li>Articles.</li>
         <li>About Store</li>
       </ul>
+      <select value={currency_data} onChange={(e) => setGetCurrency(e.target.value)}>
+        <option value="usd">USD</option>
+        <option value="uzs">UZS</option>
+        <option value="rubl">RUBL</option>
+      </select>
       <h4><FaStar/> Beauty Club</h4>
     </div>
     <nav>
       <div className="nav__logo">
-        <img src={NavLogo} alt="MAKEUP-LOGO" />
+        <Link to={"/"}><img src={NavLogo} alt="MAKEUP-LOGO" /></Link>
       </div>
       <div className="nav-search">
 
@@ -47,4 +67,4 @@ const Nav = () => {
   )
 }
 
-export default Nav
+export default connect(null, {loadCurrency})(Nav)

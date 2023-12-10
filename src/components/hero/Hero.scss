@@ -20,10 +20,15 @@ header{
     display: flex;
     justify-content: space-between;
     li{
+        &::marker{
+        color: white;
+        }
         .hero__nav-item{
             @include f-style(18px, #000, 500);
             text-decoration: none;
             transition: 0.2s;
+            text-transform: uppercase;
+            list-style-type: none !important;
             &:hover{
                 cursor: pointer;
                 opacity: 0.8;
