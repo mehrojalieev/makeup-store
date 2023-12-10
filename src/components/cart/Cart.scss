@@ -9,6 +9,7 @@
 }
 
 .cart-list{
+    position: relative;
     width: 350px;
     height: 500px;
     border-radius: 5px;
@@ -64,4 +65,14 @@
         font-size: 18px;
         color: gold;
     }
+}
+
+.remove-btn{
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    border: none;
+    background: transparent;
+    color: #000;
+    font-size: 24px;
 }

@@ -7,7 +7,8 @@ import { MdBrandingWatermark } from "react-icons/md";
 import { GrDeliver } from "react-icons/gr";
 import parse from "html-react-parser"
 
-const SingleProduct = () => {
+
+const SingleProduct = (props) => {
 
   const [singleProductData, setSingleProductData] = useState({})
   const [changeColor, setChangeColor] = useState({})
@@ -27,6 +28,11 @@ const SingleProduct = () => {
       })
       .catch(error => console.log(error))
   }, [])
+
+
+  const handleAddCart = (cart) => {
+
+  }
 
 
   const imgCard = useRef()
@@ -73,7 +79,7 @@ const SingleProduct = () => {
         }
 
         <div className="btn-actions">
-          <button>Add To Favourite</button>
+          <button onClick={() => handleAddCart(singleProductData)}>Add To Favourite</button>
           <button>Purchase</button>
         </div>
         <div className="service">

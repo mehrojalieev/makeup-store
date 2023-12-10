@@ -18,7 +18,9 @@ import { Link } from "react-router-dom";
 const Main = (props) => {
 
   const { products_data } = useSelector(state => state.products)
-  console.log(products_data);
+
+  const {currency_data} = useSelector(state => state.currency)
+  console.log(currency_data);
 
   
   
@@ -33,9 +35,7 @@ const Main = (props) => {
 
 
   const handleCart = (product) => {
-    console.log(product);
     if(product.length !==  0){ 
-      console.log(product);
       props.loadCarts(product)
       console.log(loadCarts);
     }
@@ -43,8 +43,7 @@ const Main = (props) => {
 
 
   const handleLike = (likedProduct) => {
-    likedProduct.count = 1
-    console.log(likedProduct);
+      console.log(likedProduct);
             props.loadFavouriteProduct(likedProduct)
   }
 
@@ -82,7 +81,7 @@ const Main = (props) => {
                 }
                 <div className="price-action">
                   <strong>Price</strong>
-                  {product.price !== "0.0" ? <p>{product.price} $</p> : <p>{randomNumb} $</p>}
+                   <p>{currency_data == "uzs" ? product.price * 12300 +"Sum" : currency_data == "rubl" ? product.price * 92+"Rubl" : product.price} </p>
                 </div>
                 <div className="add-cart-btn">
                   <button onClick={() => handleCart(product)}>Add to card</button>

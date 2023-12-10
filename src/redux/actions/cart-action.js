@@ -8,12 +8,27 @@ const load_carts = (getCart) => {
     }
 }
 
+// const load_remove_cart = (removeCart) => {
+//     console.log(removeCart);
+//    return{
+//     type: "REMOVE_CART",
+//     payload: {
+//         removeCart
+//     }
+//    }
+// }
+
 
 
 const loadCarts = (getCart) => async dispatch => {
     console.log(getCart);
     dispatch(load_carts(getCart))
 }
+
+
+// const removeCarts = (removeCart) => async dispatch => {
+//    dispatch(load_remove_cart(removeCart));
+// }
 
 
 export {loadCarts}
