@@ -4,6 +4,12 @@ const initialState ={
 
 
 const favouriteReducer = (state = initialState, {type, payload}) => {
+    
+    // const favourite_index = state.favourite_data.findIndex(liked => 
+    //     liked.liked_id === payload.favourite_product.liked_id
+        
+    //     )
+    console.log(payload);
     switch(type){
         case "FAVOURITE":
             return{

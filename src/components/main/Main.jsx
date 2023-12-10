@@ -18,6 +18,7 @@ import { Link } from "react-router-dom";
 const Main = (props) => {
 
   const { products_data } = useSelector(state => state.products)
+  console.log(products_data);
 
   
   
@@ -42,14 +43,16 @@ const Main = (props) => {
 
 
   const handleLike = (likedProduct) => {
+    likedProduct.count = 1
     console.log(likedProduct);
-            loadFavouriteProduct(likedProduct)
+            props.loadFavouriteProduct(likedProduct)
   }
 
 
   return (
     <>
       <main>
+
 
         <Swiper
           slidesPerView={4}

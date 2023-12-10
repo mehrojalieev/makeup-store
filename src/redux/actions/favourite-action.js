@@ -1,4 +1,5 @@
 const load_favourite = (favourite_product) => {
+    console.log(favourite_product);
     return{
         type: "FAVOURITE",
         payload: {
@@ -8,7 +9,7 @@ const load_favourite = (favourite_product) => {
 }
 
 
-const loadFavouriteProduct = (likedPRod) => (dispatch, getState) => {
+const loadFavouriteProduct = (likedPRod) => async dispatch => {
     dispatch(load_favourite(likedPRod))
 }   
 
