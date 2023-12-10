@@ -14,6 +14,8 @@ import { useEffect, useState } from "react";
 const Hero = (props) => {
 
 
+  const categories = ["pencil","lipstick","liquid","",null,"powder","lip_gloss","gel","cream","palette","concealer","highlighter","bb_cc","contour","lip_stain","mineral"]
+
     useEffect(() => {
         props.loadProducts()
     }, [])
@@ -24,7 +26,7 @@ const Hero = (props) => {
     <header>
         <div className="hero__navbar">
             <ul className="hero__menu">
-                <li><NavLink end className={({isActive}) => isActive ? "hero__nav-item hero__nav-item--active" : "hero__nav-item"} to="">Blush</NavLink></li>
+                <li><NavLink end className={({isActive}) => isActive ? "hero__nav-item hero__nav-item--active" : "hero__nav-item"} to={categories}>Blush</NavLink></li>
                 <li><NavLink className={({isActive}) => isActive ? "hero__nav-item hero__nav-item--active" : "hero__nav-item"} to="">Bronzer</NavLink></li>
                 <li><NavLink className={({isActive}) => isActive ? "hero__nav-item hero__nav-item--active" : "hero__nav-item"} to="">Eyebrow</NavLink></li>
                 <li><NavLink className={({isActive}) => isActive ? "hero__nav-item hero__nav-item--active" : "hero__nav-item"} to="">Eyeliner</NavLink></li>

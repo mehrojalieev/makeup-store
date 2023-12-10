@@ -1,9 +1,9 @@
 import "./Footer.scss"
-
+import Flags from "../../assets/images/flags.svg"
 const Footer = () => {
   return (
     <footer>
-        <div className="footer-wrapper">
+        <div className="footer-wrapper">  
           <div className="footer-menu">
             <ul>
               <li>About</li>
@@ -32,6 +32,13 @@ const Footer = () => {
               <button>Send</button>
             </div>
           </div>
+        </div>
+        <div className="flags">
+          <img src={Flags} alt="" />
+        </div>
+        <div className="copy-right">
+          <h3>MAKEUP™. BEAUTY WITHOUT LIMITS</h3>
+          <p>© MAKEUP 2021-2023</p>
         </div>
     </footer>
   )

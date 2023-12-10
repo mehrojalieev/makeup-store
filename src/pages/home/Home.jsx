@@ -1,3 +1,4 @@
+import About from "../../components/about/About"
 import Hero from "../../components/hero/Hero"
 import Main from "../../components/main/Main"
 import Footer from "../../layout/footer/Footer"
@@ -6,10 +7,11 @@ import "./Home.scss"
 
 const Home = () => {
   return (
-    <div>
+    <div className="home">
         {/* <Nav/>/ */}
         <Hero/> 
         <Main/>
+        <About/>
         <Footer/>
     </div>
   )

@@ -23,13 +23,13 @@ footer{
 .footer-menu{
     display: flex;
     align-items: center;
-    gap: 100px;
+    gap: 140px;
     ul{
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 30px;
         li{
-            @include f-style(18px, #000, 500);
+            @include f-style(16px, #000, 500);
             list-style-type: none;
         }
     }
@@ -40,6 +40,9 @@ footer{
     .number{
         @include f-style(20px, #000, 500);
     }
+    p{
+        margin-top: 10px;
+    }
 }
 .email-action{
     display: flex;
@@ -47,7 +50,7 @@ footer{
     border: 1px solid black;
     overflow: hidden;
     border-radius: 6px;
-    margin-top: 10px;
+    margin-top: 20px;
     &:focus {
         box-shadow: 0 0 5px gray;
     }
@@ -67,5 +70,24 @@ footer{
         padding: 0px 20px;
         background: #000;
         @include f-style(20px, #fff, 500);
+    }
+}
+.flags{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1100px;
+    margin-left: 80px;
+    margin-top: 50px;
+}
+
+.copy-right{
+    text-align: center;
+    margin-top: 56px;
+    h3{
+       @include f-style(22px, #5b24c9, 500);
+    }
+    p{
+        @include f-style(20, #666666, 400 )
     }
 }

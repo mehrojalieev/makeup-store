@@ -17,37 +17,26 @@ const Cart = () => {
       <div className="cart-container">
         {
           cart_data.map(carts =>
-            <div key={carts?.id} className="cart-list">
-              {
-                carts?.api_featured_image ? <img src={carts?.api_featured_image} alt="Cart-Image" />
-                  : <img src="https://elisium.uz/thumb/2/Ofsz5-ho54VkutEB8ec3oA/r/d/375x50050790.jpg" alt="Nothing" />
+            carts !== null && carts !== undefined &&
+              <div className="cart-list">
+                <img src={carts?.api_featured_image} alt="Cart-Image" />
+                <h3>{carts?.name}</h3>
+                <p>{carts?.description?.slice(0, 70)}</p>
 
-              }
+                <div className="icons">
+                  <i><FaStar /></i>
+                  <i><FaStar /></i>
+                  <i><FaStar /></i>
+                  <i><FaStar /></i>
+                  <i><FaStar /></i>
+                </div>
+                <div className="purchase-action">
+                  <button className="purchase-btn">Purchase</button>
 
-              {
-                carts?.name !== 0 ? <h3>This Parfume. The best brand</h3>
-                  :
-                  <h3>{carts?.name}</h3>
-              }
-              {
-                carts?.description !== 0 ? <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, architecto.</p>
-                  : <p>{parse(carts?.description?.slice(0, 70))}</p>
-              }
-              <div className="icons">
-                <i><FaStar /></i>
-                <i><FaStar /></i>
-                <i><FaStar /></i>
-                <i><FaStar /></i>
-                <i><FaStar /></i>
+                  <strong>{carts?.price}</strong>
+
+                </div>
               </div>
-              <div className="purchase-action">
-                <button className="purchase-btn">Purchase</button>
-                {
-                  carts?.price !== "0.0" || "0" || "" ? <strong>{randomNumb} $</strong>
-                    : <strong>{carts?.price}</strong>
-                }
-              </div>
-            </div>
           )
         }
       </div>

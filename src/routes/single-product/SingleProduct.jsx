@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import "./SingleProduct.scss"
 import { useParams } from "react-router-dom"
 import { instance } from "../../api"
@@ -9,7 +9,12 @@ import parse from "html-react-parser"
 
 const SingleProduct = () => {
 
-  const [singleProductData, setSingleProductData] = useState([])
+  const [singleProductData, setSingleProductData] = useState({})
+  const [changeColor, setChangeColor] = useState({})
+
+  const getColor = singleProductData?.product_colors
+  console.log(getColor?.[0].hex_value);
+
   const { id } = useParams()
 
   const [randomNumb, SetnandomNumb] = useState(Math.floor(Math.random() * 20));
@@ -17,11 +22,19 @@ const SingleProduct = () => {
   useEffect(() => {
     instance(`/products/${id + ".json"}`)
       .then(response => {
-        console.log(response.data)
+        console.log(response.data);
         setSingleProductData(response.data)
       })
       .catch(error => console.log(error))
   }, [])
+
+
+  const imgCard = useRef()
+  console.log(imgCard);
+
+  const handleChangeColor = (colors) => {
+    imgCard.current.style = `border: 3px solid ${colors}; border-radius: 10px` 
+  } 
 
   return (
     <div className="product__wrapper">
@@ -36,9 +49,18 @@ const SingleProduct = () => {
           <i><FaStarHalfAlt /></i>
         </div>
       </div>
-      <div className="product-image">
-        <img src={singleProductData.api_featured_image
-        } alt="" />
+      <div className="product-image-card">
+        <div ref={imgCard} className="product-image">
+          <img src={singleProductData.api_featured_image
+          } alt="" />
+        </div>
+        <div className="colors-action">
+        {
+          singleProductData?.product_colors?.map(colors =>
+              <div onClick={() =>handleChangeColor(colors.hex_value)} style={{backgroundColor: colors.hex_value, width: "30px", height: "30px", borderRadius: "50%"}}></div>
+            )
+          }
+          </div>
       </div>
       <div className="product__actions-container">
         <div className="brand">
@@ -47,7 +69,7 @@ const SingleProduct = () => {
         </div>
         {
           singleProductData.price === "0" ? <strong className="price-text">{singleProductData.price} $</strong>
-          :<strong className="price-text"> {randomNumb} $</strong>
+            : <strong className="price-text"> {randomNumb} $</strong>
         }
 
         <div className="btn-actions">
@@ -58,9 +80,9 @@ const SingleProduct = () => {
           <i><GrDeliver /></i>
           <p>Delivery Service</p>
         </div>
-          <div className="chegirma">
+        <div className="chegirma">
           <span>Get</span> <b>15%</b> <span>Off</span>
-          </div>
+        </div>
       </div>
     </div>
   )

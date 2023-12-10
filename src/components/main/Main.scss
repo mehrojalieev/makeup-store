@@ -5,7 +5,7 @@
 }
 main{
   width: 1200px;
-  height: 500px;
+  // height: 500px;
   margin: auto;
 }
 
@@ -90,6 +90,7 @@ main{
 }
 
 .like-btn{
+  z-index: 5;
   top: 8px ; right: 10px;
   position: absolute;
   border: none;
@@ -98,7 +99,7 @@ main{
   transition: 0.2s;
   &:hover{
     transform: scale(1.02);
-    background-color: red;
+    color: red;
   }
 }
 
