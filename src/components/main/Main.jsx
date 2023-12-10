@@ -1,9 +1,10 @@
 import { connect, useSelector } from "react-redux"
 import { loadProducts } from "../../redux/actions/product-action"
+import { loadFavouriteProduct } from "../../redux/actions/favourite-action";
 import { useEffect, useState } from "react";
 import "./Main.scss"
 import parse from "html-react-parser"
-import { FaRegHeart } from "react-icons/fa";
+import { FaHeart } from "react-icons/fa";
 import { loadCarts } from "../../redux/actions/cart-action";
 
 // SWIPER
@@ -18,11 +19,12 @@ const Main = (props) => {
 
   const { products_data } = useSelector(state => state.products)
 
-
+  
+  
   useEffect(() => {
     props.loadCarts()
+    props.loadFavouriteProduct()
   }, [])
-  // console.log(products_data);
 
   const [randomNumb, SetnandomNumb] = useState(Math.floor(Math.random() * 50))
   const [openLike, setOpenLike] = useState(false)
@@ -30,9 +32,18 @@ const Main = (props) => {
 
 
   const handleCart = (product) => {
-    // console.log(product);
-    props.loadCarts(product)
-    console.log(loadCarts);
+    console.log(product);
+    if(product.length !==  0){ 
+      console.log(product);
+      props.loadCarts(product)
+      console.log(loadCarts);
+    }
+  }
+
+
+  const handleLike = (likedProduct) => {
+    console.log(likedProduct);
+            loadFavouriteProduct(likedProduct)
   }
 
 
@@ -58,8 +69,8 @@ const Main = (props) => {
                 <div className="card-image">
                   <Link to={`single-product/${product.id}`}>
                     <img  src={product.api_featured_image} alt="Image" />
+                    <button onClick={() => handleLike(product)} className="like-btn"><FaHeart/></button>
                   </Link>
-                  <button style={openLike ? {display: "block"} : {display: "none"}} className="like-btn"><FaRegHeart /></button>
                 </div>
                 <h3 className="product-name">{product.name.slice(0, 15)}</h3>
                 {
@@ -84,4 +95,4 @@ const Main = (props) => {
   )
 }
 
-export default connect(null, { loadProducts, loadCarts })(Main)
+export default connect(null, { loadProducts, loadCarts, loadFavouriteProduct })(Main)
