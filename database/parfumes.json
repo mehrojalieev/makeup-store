@@ -1,0 +1,37 @@
+{
+    "perfumes": [
+      {
+        "id": 1,
+        "name": "Chanel No. 5",
+        "brand": "Chanel",
+        "description": "An iconic floral fragrance with notes of rose, jasmine, and ylang-ylang.",
+        "price": 100,
+        "image": "https://example.com/images/chanel_no5.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Dolce & Gabbana Light Blue",
+        "brand": "Dolce & Gabbana",
+        "description": "A fresh, fruity-floral scent with hints of Sicilian cedar and apple.",
+        "price": 85,
+        "image": "https://example.com/images/dolce_gabbana_light_blue.jpg"
+      },
+      {
+        "id": 3,
+        "name": "Yves Saint Laurent Black Opium",
+        "brand": "Yves Saint Laurent",
+        "description": "A modern, rock-inspired fragrance with notes of coffee, vanilla, and white flowers.",
+        "price": 120,
+        "image": "https://example.com/images/yves_saint_laurent_black_opium.jpg"
+      },
+      {
+        "id": 4,
+        "name": "Giorgio Armani Acqua Di Gio",
+        "brand": "Giorgio Armani",
+        "description": "A refreshing, aquatic fragrance with notes of marine, citrus, and cedar.",
+        "price": 95,
+        "image": "https://example.com/images/giorgio_armani_acqua_di_gio.jpg"
+      }
+    ]
+  }
+  

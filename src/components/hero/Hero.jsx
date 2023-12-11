@@ -41,13 +41,9 @@ const Hero = (props) => {
           spaceBetween={30}
           centeredSlides={true}
           autoplay={{
-            disableOnInteraction: true,
-            pauseOnMouseEnter: false,
+           
             delay: 3500,
-            waitForTransition: true,
-            reverseDirection: false,
-            stopOnLastSlide: false,
-            disableOnInteraction: false,
+           
           }}
           pagination={{
             clickable: true,
