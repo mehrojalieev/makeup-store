@@ -6,19 +6,15 @@
 footer{
     width: 100%;
     height: auto;
-    padding: 10px 15px;
     margin-top: 10px;
     margin-bottom: 20px;
 }
-.footer-wrapper{
+.footer-container{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
-    max-width: 1200px;
+    // width: 100%;
     height: auto;
-    margin: auto;
-    padding: 0px 10px;
 }
 .footer-menu{
     display: flex;
