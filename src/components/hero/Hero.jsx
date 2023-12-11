@@ -30,7 +30,6 @@ const Hero = (props) => {
           {
             typeOf.map(types =>
               <li><NavLink end className={({ isActive }) => isActive ? "hero__nav-item hero__nav-item--active" : "hero__nav-item"} to={`cateogry/${types}`} >{types}</NavLink></li>
-
             )
           }
         </ul>
@@ -62,6 +61,9 @@ const Hero = (props) => {
         </Swiper>
       </div>
 
+          <div className="hero__category">
+            
+          </div>
 
     </header>
   )

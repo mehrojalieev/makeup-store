@@ -1,11 +1,14 @@
+import "./Main.scss"
+import { useEffect, useState } from "react";
 import { connect, useSelector } from "react-redux"
 import { loadProducts } from "../../redux/actions/product-action"
 import { loadFavouriteProduct } from "../../redux/actions/favourite-action";
-import { useEffect, useState } from "react";
-import "./Main.scss"
-import parse from "html-react-parser"
-import { FaHeart } from "react-icons/fa";
 import { loadCarts } from "../../redux/actions/cart-action";
+import parse from "html-react-parser"
+// import { useGetParfumesQuery } from "../../api/apiSlice";
+
+// ICONS
+import { FaHeart } from "react-icons/fa";
 
 // SWIPER
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -16,6 +19,9 @@ import { Link } from "react-router-dom";
 
 
 const Main = (props) => {
+
+  // const [getParfumes] = useGetParfumesQuery()
+  // console.log(getParfumes);
 
   const { products_data } = useSelector(state => state.products)
 
