@@ -3,7 +3,7 @@ import { IoIosSearch } from "react-icons/io";
 import { FaRegHeart, FaShoppingCart, FaHeart, FaRegUser, FaStar } from "react-icons/fa";
 
 import NavLogo from "../../assets/images/logo.svg"
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { connect, useSelector } from "react-redux";
 import { loadCurrency } from "../../redux/actions/currency-action";
@@ -11,6 +11,7 @@ import { Container } from "../../utils/Utils";
 
 const Nav = (props) => {
 
+  // For Currency
   const [getCurrency, setGetCurrency] = useState('')
   console.log(getCurrency);
 
@@ -20,52 +21,32 @@ const Nav = (props) => {
   useEffect(() => {
     props.loadCurrency(getCurrency)
   }, [getCurrency])
-  // export {setGetCurrency}
   return (
     <nav>
-
       <Container>
-        <div className="nav-header">
-          <h4>Free shipping!</h4>
-          <ul className="nav__header-menu">
-            <li>Stock.</li>
-            <li>Delivery and Payment.</li>
-            <li>Articles.</li>
-            <li>About Store</li>
-          </ul>
-          <select value={currency_data} onChange={(e) => setGetCurrency(e.target.value)}>
-            <option value="usd">USD</option>
-            <option value="uzs">UZS</option>
-            <option value="rubl">RUBL</option>
-          </select>
-          <h4><FaStar /> Beauty Club</h4>
+        <div className="sale-card">
+          <h3>EXTRA 15% OFF CLICK HERE</h3>
         </div>
-        <div className="navbar">
-          <div className="nav__logo">
-            <Link to={"/"}><img src={NavLogo} alt="MAKEUP-LOGO" /></Link>
+          <div className="nav__wrapper">
+          <Link className="nav__logo" to={"/"}>
+            <img width={100} height={90} src="https://img.myloview.com/posters/fashion-beauty-cosmetics-logo-banner-with-makeup-artist-beauty-set-for-make-up-red-lipstick-eyeshadow-makeup-brush-vector-hand-drawn-illustration-with-inscription-beauty-on-a-red-ink-grunge-smear-400-106863248.jpg" alt="" />
+          </Link>
+          <div className="nav__menu-container">
+            <ul className="nav__menu">
+              <li><NavLink className={({isActive}) => isActive ? "nav-link nav-link--active" : "nav-link"}>Home</NavLink></li>
+              <li><NavLink className={({isActive}) => isActive ? "nav-link nav-link--active" : "nav-link"}>Products</NavLink></li>
+              <li><NavLink className={({isActive}) => isActive ? "nav-link nav-link--active" : "nav-link"}>About</NavLink></li>
+              <li><NavLink className={({isActive}) => isActive ? "nav-link nav-link--active" : "nav-link"}>Contact </NavLink></li>
+            </ul>
           </div>
-          <div className="nav-search">
 
-            <div className="search">
-              <input type="text" placeholder="Search..." />
+          <div className="nav-action">
+            <div className="register-user">
+              <i><FaRegUser/></i>
+              <Link className="user-link">Cabinet</Link>
             </div>
-
-            <button> Search <IoIosSearch />   </button>
           </div>
-
-
-          <div className="nav__actions">
-            <Link className="link-nav" to={"/cart"} >
-              <span>Cart</span><FaShoppingCart />
-            </Link>
-            <Link className="link-nav" to={"/favourite"} >
-              <span>Favourite</span><FaHeart />
-            </Link>
-            <Link className="link-nav cabinet-link">Cabinet <FaRegUser /></Link>
-
           </div>
-
-        </div>
       </Container>
     </nav>
   )
