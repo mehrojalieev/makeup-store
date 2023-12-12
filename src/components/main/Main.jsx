@@ -25,11 +25,11 @@ const Main = (props) => {
 
   const { products_data } = useSelector(state => state.products)
 
-  const {currency_data} = useSelector(state => state.currency)
+  const { currency_data } = useSelector(state => state.currency)
   console.log(currency_data);
 
-  
-  
+
+
   useEffect(() => {
     props.loadCarts()
     props.loadFavouriteProduct()
@@ -41,7 +41,7 @@ const Main = (props) => {
 
 
   const handleCart = (product) => {
-    if(product.length !==  0){ 
+    if (product.length !== 0) {
       props.loadCarts(product)
       console.log(loadCarts);
     }
@@ -49,8 +49,8 @@ const Main = (props) => {
 
 
   const handleLike = (likedProduct) => {
-      console.log(likedProduct);
-            props.loadFavouriteProduct(likedProduct)
+    console.log(likedProduct);
+    props.loadFavouriteProduct(likedProduct)
   }
 
 
@@ -76,18 +76,18 @@ const Main = (props) => {
               <SwiperSlide key={product.id}>
                 <div className="card-image">
                   <Link to={`single-product/${product.id}`}>
-                    <img  src={product.api_featured_image} alt="Image" />
-                    <button onClick={() => handleLike(product)} className="like-btn"><FaHeart/></button>
+                    <img src={product.api_featured_image} alt="Image" />
+                    <button onClick={() => handleLike(product)} className="like-btn"><FaHeart /></button>
                   </Link>
                 </div>
                 <h3 className="product-name">{product.name.slice(0, 15)}</h3>
                 {
-                  product.description  ? <p className="product-description">{parse(product.description.slice(0, 25))}</p>
+                  product.description ? <p className="product-description">{parse(product.description.slice(0, 25))}</p>
                     : <p>Lorem ipsum dolor sit amet consectetur.</p>
                 }
                 <div className="price-action">
                   <strong>Price</strong>
-                   <p>{currency_data == "uzs" ? product.price * 12300 +"Sum" : currency_data == "rubl" ? product.price * 92+"Rubl" : product.price} </p>
+                  <p>{currency_data == "uzs" ? product.price * 12300 + "Sum" : currency_data == "rubl" ? product.price * 92 + "Rubl" : product.price} </p>
                 </div>
                 <div className="add-cart-btn">
                   <button onClick={() => handleCart(product)}>Add to card</button>
