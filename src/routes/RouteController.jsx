@@ -5,6 +5,7 @@ import SingleProduct from './single-product/SingleProduct'
 import Cart from '../components/cart/Cart'
 import Category from '../components/category/Category'
 import Favourite from '../components/favourite/Favourite'
+import SignUp from './sub-routes/signup/SignUp'
 
 const RouteController = () => {
   return (
@@ -12,10 +13,7 @@ const RouteController = () => {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='cart' element={<Cart />} />
-        <Route path='auth'>
-          <Route/>
-          <Route/>
-        </Route>
+          <Route path='signup' element={<SignUp/>}/>
         <Route path='favourite' element={<Favourite />} />
         <Route path='category/:categ' element={<Category />} />
         <Route path='/single-product/:id' element={<SingleProduct />} />
