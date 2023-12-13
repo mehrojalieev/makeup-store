@@ -12,6 +12,10 @@ const RouteController = () => {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='cart' element={<Cart />} />
+        <Route path='auth'>
+          <Route/>
+          <Route/>
+        </Route>
         <Route path='favourite' element={<Favourite />} />
         <Route path='category/:categ' element={<Category />} />
         <Route path='/single-product/:id' element={<SingleProduct />} />

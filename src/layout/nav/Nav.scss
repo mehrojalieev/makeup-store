@@ -90,10 +90,10 @@ nav{
     align-items: center;
     gap: 10px;
     i{
-        @include f-style(20px, #000, 600);
+        @include f-style(20px, #ffffff, 600);
     }
     .user-link{
         text-decoration: none;
-        @include f-style(19px, #1a1818, 600);
+        @include f-style(19px, #ffffff, 600);
     }
 }

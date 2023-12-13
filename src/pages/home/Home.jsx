@@ -8,9 +8,8 @@ import "./Home.scss"
 const Home = () => {
   return (
     <div className="home">
-        {/* <Nav/>/ */}
-        {/* <Hero/> 
-        <Main/>
+         {/* <Hero/>  */}
+        {/* <Main/>
         <About/>
         <Footer/> */}
     </div>
