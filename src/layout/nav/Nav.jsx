@@ -26,7 +26,7 @@ const Nav = (props) => {
         <div className="sale-card">
           <h3>EXTRA 15% OFF CLICK HERE</h3>
         </div>
-
+    
 
           <div className="nav__wrapper">
           <div className="nav__logo" >
