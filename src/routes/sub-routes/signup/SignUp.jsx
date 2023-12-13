@@ -1,4 +1,6 @@
 // import "./SignUp.scss"
+
+
 import { useState } from "react";
 
 const SignUp = () => {
@@ -19,7 +21,6 @@ const SignUp = () => {
     
       const handleSubmit = (e) => {
         e.preventDefault();
-        // Handle form submission with formData
         console.log(formData);
       };
   return (
