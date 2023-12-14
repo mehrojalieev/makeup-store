@@ -41,7 +41,7 @@ const Nav = (props) => {
           <div className="nav-action">
             <div className="register-user">
               <i><FaRegUser/></i>
-              <Link className="user-link">Cabinet</Link>
+              <Link className="user-link" to="signup">Cabinet</Link>
             </div>
           </div>
           </div>
