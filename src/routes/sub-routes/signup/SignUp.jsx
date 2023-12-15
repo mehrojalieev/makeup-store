@@ -5,6 +5,8 @@ import { useEffect, useState } from "react"
 
 const [name, setName] = useState("")
 
+const token = localStorage()
+
 const SignUp = () => {
   return (
     <div className="form-backdrop">
