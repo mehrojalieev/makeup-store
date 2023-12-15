@@ -3,13 +3,15 @@ import { IoIosSearch } from "react-icons/io";
 import { FaRegHeart, FaShoppingCart, FaHeart, FaRegUser, FaSearch  } from "react-icons/fa";
 
 import NavLogo from "../../assets/images/logo.svg"
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { connect, useSelector } from "react-redux";
 import { loadCurrency } from "../../redux/actions/currency-action";
 import { Container } from "../../utils/Utils";
 
 const Nav = (props) => {
+
+  const {pathname} = useLocation()
 
   // For Currency
   const [getCurrency, setGetCurrency] = useState('')
@@ -21,7 +23,7 @@ const Nav = (props) => {
   useEffect(() => {
     props.loadCurrency(getCurrency)
   }, [getCurrency])
-  return (
+  return pathname.includes("/signup") ? null : (
     <nav>
         <div className="sale-card">
           <h3>EXTRA 15% OFF CLICK HERE</h3>
@@ -41,7 +43,7 @@ const Nav = (props) => {
           <div className="nav-action">
             <div className="register-user">
               <i><FaRegUser/></i>
-              <Link className="user-link" to="signup">Cabinet</Link>
+              <Link className="user-link" to="signup">Register</Link>
             </div>
           </div>
           </div>
