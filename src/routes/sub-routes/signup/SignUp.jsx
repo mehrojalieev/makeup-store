@@ -1,6 +1,9 @@
 import { useLocation } from "react-router-dom"
 import "./SignUp.scss"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
+
+
+const [name, setName] = useState("")
 
 const SignUp = () => {
   return (
