@@ -1,10 +1,10 @@
+import { useLocation } from "react-router-dom"
 import "./SignUp.scss"
+import { useEffect } from "react"
 
 const SignUp = () => {
-
-      
   return (
-    <div>
+    <div className="form-backdrop">
     <form  className="form-container">
       <h1>SIGN UP</h1>
         <input autoComplete="off" type="text" id="username" name="username" placeholder="Enter username" className="form-control"/>
