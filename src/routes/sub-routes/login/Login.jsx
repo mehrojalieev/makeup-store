@@ -3,8 +3,8 @@ import "./Login.scss"
 
 const Login = () => {
 
-    const userData = JSON.parse(localStorage.getItem("user"))
-    console.log(userData);
+    // const userData = JSON.parse(localStorage.getItem("user"))
+    // console.log(userData);
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -14,11 +14,8 @@ const Login = () => {
     const sbtBtn = submitBtn.current
     
 const handleLoginUser = (e) => {
-    if(userData.email === email && userData.password === password){
-       setTimeout(() => { 
-        window.location.pathname = '/'
-    }, 1600)
-    }
+    e.preventDefault()
+    window.location.pathname = "/"    
 }
 
   
