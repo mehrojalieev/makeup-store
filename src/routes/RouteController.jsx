@@ -6,6 +6,7 @@ import Cart from '../components/cart/Cart'
 import Category from '../components/category/Category'
 import Favourite from '../components/favourite/Favourite'
 import SignUp from './sub-routes/signup/SignUp'
+import Login from './sub-routes/login/Login'
 
 const RouteController = () => {
   return (
@@ -14,6 +15,7 @@ const RouteController = () => {
         <Route path='/' element={<Home />} />
         <Route path='cart' element={<Cart />} />
           <Route path='signup' element={<SignUp/>}/>
+          <Route path='login' element={<Login/>}/>
         <Route path='favourite' element={<Favourite />} />
         <Route path='category/:categ' element={<Category />} />
         <Route path='/single-product/:id' element={<SingleProduct />} />
