@@ -23,7 +23,7 @@ const Nav = (props) => {
   useEffect(() => {
     props.loadCurrency(getCurrency)
   }, [getCurrency])
-  return pathname.includes("/signup") ? null : (
+  return pathname.includes("/signup") || pathname.includes("/login") ? null : (
     <nav>
         <div className="sale-card">
           <h3>EXTRA 15% OFF CLICK HERE</h3>
