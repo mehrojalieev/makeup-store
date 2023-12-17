@@ -7,46 +7,39 @@ header{
     width: 100%;
     height: auto;
 }
+
 .hero__navbar{
     display: flex;
     align-items: center;
-    width: 1200px;
+    justify-content: center;
+    gap: 0px 20px;
+    width: 100%;
     height: 40px;
-    margin: 50px auto 0;
+    background-color: #000000;
+    .hero__nav-icons{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        margin-top: 5px;
+        gap: 10px;
+
+        i{
+            color: gold;
+             font-size: 17px;
+            }
+    }
+    p{
+        color: #fff;
+        font-size: 18px;
+    }
 }
 
-.hero__menu{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    li{
-        &::marker{
-        color: white;
-        }
-        .hero__nav-item{
-            @include f-style(18px, #000, 500);
-            text-decoration: none;
-            transition: 0.2s;
-            text-transform: uppercase;
-            list-style-type: none !important;
-            &:hover{
-                cursor: pointer;
-                opacity: 0.8;
-            }
-           &:active{
-            color: red;
-           }
-        }
-    }
-}
+
+
 .hero__banner{
-    // width: 1200px;
     width: 100%;
-    margin: 20px auto;
-    img{
-        width: 100%;
-        object-fit: cover;
-    }
+    // max-width: 1300px;
+    margin: 0px auto 0;
 }
 // SWIPERS STYLE
 
@@ -56,10 +49,11 @@ header{
 }
 .swiper-card{
     width: 100%;
+    margin: auto;
   img{
     width: 100% !important;
-    height: 100% !important;
-    object-fit: cover;
+    height: 560px !important;
+    object-fit: cover !important;
   }
 }
 
