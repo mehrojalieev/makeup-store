@@ -24,6 +24,7 @@ const Main = (props) => {
   // console.log(getParfumes);
 
   const { products_data } = useSelector(state => state.products)
+  console.log(products_data);
 
   const { currency_data } = useSelector(state => state.currency)
   console.log(currency_data);
@@ -60,7 +61,7 @@ const Main = (props) => {
 
 
         <Swiper
-          slidesPerView={4}
+          slidesPerView={3}
           spaceBetween={30}
           centeredSlides={false}
           autoplay={{
@@ -72,29 +73,16 @@ const Main = (props) => {
           className="mySwiper"
         >
           {
-            products_data.slice(5, 25).map(product =>
-              <SwiperSlide key={product.id}>
-                <div className="card-image">
-                  <Link to={`single-product/${product.id}`}>
-                    <img src={product.api_featured_image} alt="Image" />
-                    <button onClick={() => handleLike(product)} className="like-btn"><FaHeart /></button>
-                  </Link>
-                </div>
-                <h3 className="product-name">{product.name.slice(0, 15)}</h3>
-                {
-                  product.description ? <p className="product-description">{parse(product.description.slice(0, 25))}</p>
-                    : <p>Lorem ipsum dolor sit amet consectetur.</p>
-                }
-                <div className="price-action">
-                  <strong>Price</strong>
-                  <p>{currency_data == "uzs" ? product.price * 12300 + "Sum" : currency_data == "rubl" ? product.price * 92 + "Rubl" : product.price} </p>
-                </div>
-                <div className="add-cart-btn">
-                  <button onClick={() => handleCart(product)}>Add to card</button>
-                </div>
-              </SwiperSlide>
-
-            )
+            products_data.slice(0,10).map(product => 
+                <SwiperSlide className="slide-card" key={product.id}>
+                    <img src={product.api_featured_image}/>
+                    <h4>{product.name}</h4>
+                    <div className="product-btn-action">
+                    <button className="addcart-btn">Add To Cart</button>
+                    <button>Like </button>
+                    </div>
+                </SwiperSlide>
+              )
           }
 
         </Swiper>
