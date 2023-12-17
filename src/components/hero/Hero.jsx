@@ -3,6 +3,9 @@ import { connect, useSelector } from "react-redux";
 import { loadProducts } from "../../redux/actions/product-action";
 import bannerImage from "../../assets/images/banner.png"
 import bannerForHead from "../../assets/images/bannerForHead.png"
+import Lock from "../../assets/images/lock.svg"
+import Trusted from "../../assets/images/trusted.svg"
+import Delivery from "../../assets/images/deliver.svg"
 import { FaStar } from "react-icons/fa";
 import "./Hero.scss"
 
@@ -58,8 +61,19 @@ const Hero = (props) => {
         </Swiper>
       </div>
 
-          <div className="hero__category">
-            
+          <div className="hero__feature">
+              <div className="feature-card">
+                <img width={65} height={65} src={Lock} alt="Lock" />
+                <p> Safe & secury Checkout </p>
+              </div>
+              <div className="feature-card">
+                <img width={65} height={65} src={Trusted} alt="Lock" />
+                <p> 100% authentic fragrances </p>
+              </div>
+              <div className="feature-card">
+                <img width={65} height={65} src={Delivery} alt="Lock" />
+                <p>Items Ship Same Day</p>
+              </div>
           </div>
 
     </header>

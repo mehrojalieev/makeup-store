@@ -15,92 +15,36 @@ main{
   height: 450px;
 }
 
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: left;
-  border-radius: 5px;
-  margin-top: 5px;
-  box-shadow:  0 0 5px rgba(128, 128, 128, 0.571);
-  .product-name{
-    margin-left: 10px;
-    @include f-style(16px, #000, 500 );
-    margin-top: 14px;
-  }
-  .product-description{
-    margin-left: 10px;
-    @include f-style(15px, --smoke-color, 400 );
-    margin-top: 5px;
-  }
-}
-
-.card-image{
-  position: relative;
-  width: 100%;
-  height: 280px;
-  padding: 7px 3px;
-  border-radius: 2px;
-  box-shadow: 0 0 1px gray;
-  overflow: hidden;
-
+// .swiper-slide {
+//   width: 30px;height: 200px;
+//   background-color: red;
+// }
+.slide-card{
+  width: 300px !important;
+  margin-top: 20px;
+  height: 400px !important;
+  padding: 10px 5px 5px;
+  box-shadow: 0 0 5px black;
   img{
     width: 100%;
-    height: 100%;
-    transition: 0.3s;
-    transform: scale(1.06);
-    &:hover{
-      transform: scale(1.1);
-    }
+    height: 70%;
+    object-fit: cover;
+  }
+  h4{
+    text-align: center;
+    margin-top: 4px;
+    @include f-style(17px, #000, 500)
   }
 }
 
-.price-action{
-  width: 100%;
-  display: flex;
-  padding: 0px 10px;
-  margin-top: 5px;
-  justify-content: space-between;
-  strong{
-    @include f-style(19px, red, 600 !important) ;
-  }
-  p{
-    font-size: 19px;
-    letter-spacing: 1px;
-    @include f-style((19px), #000, 500);
-  }
-}
-.add-cart-btn{
-  margin-top: 8px;
-  width: 100%; 
-  padding: 0 10px ;
-  button{
-    border-radius: 5px; 
-    border: none;
-    padding: 4px 0;
-    width: 100%;
-    background-color: #000;
-    height: 100%;
-  @include f-style(20px, #fff, 500);
-
-  }
-}
-
-.like-btn{
-  z-index: 5;
-  top: 8px ; right: 10px;
-  position: absolute;
+.addcart-btn{
+  text-align: center;
+  margin: auto;
+  padding: 6px 70px;
+  @include f-style(16px, #fff, 500);
   border: none;
-  background: transparent;
-  font-size: 20px;
-  transition: 0.2s;
-  &:hover{
-    transform: scale(1.02);
-    color: red;
-  }
+  border-radius: 4px;
+  background-color: blue;
 }
 
 
