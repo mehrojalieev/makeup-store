@@ -9,7 +9,7 @@ const Brand = () => {
         <div className="brand">
             <div className="brand__title-content">
                 <h2>Top Fragrance Brands</h2>
-                <Link>View All Brands</Link>
+                <Link to={"/all_brand"}>View All Brands</Link>
             </div>
             <div className="brand__box-wrapper">
                 <div className="brand-box">

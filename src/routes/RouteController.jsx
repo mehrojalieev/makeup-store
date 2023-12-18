@@ -7,6 +7,7 @@ import Category from '../components/category/Category'
 import Favourite from '../components/favourite/Favourite'
 import SignUp from './sub-routes/signup/SignUp'
 import Login from './sub-routes/login/Login'
+import AllBrandProduct from '../components/allBrand-product/AllBrandProduct'
 
 const RouteController = () => {
   return (
@@ -14,6 +15,7 @@ const RouteController = () => {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='cart' element={<Cart />} />
+        <Route path='all_brand' element={<AllBrandProduct/>}/>
           <Route path='signup' element={<SignUp/>}/>
           <Route path='login' element={<Login/>}/>
         <Route path='favourite' element={<Favourite />} />
