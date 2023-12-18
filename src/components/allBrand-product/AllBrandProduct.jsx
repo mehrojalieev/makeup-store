@@ -3,6 +3,7 @@ import "./AllBrandProduct.scss"
 import { IoStar } from "react-icons/io5";
 import { useState } from "react";
 import parse from "html-react-parser"
+import { Link } from "react-router-dom";
 
 const AllBrandProduct = () => {
 
@@ -13,9 +14,9 @@ const AllBrandProduct = () => {
   return (
     <div className="brand__products-wrapper">
         {
-            products_data.slice(0, 60).map(product => 
+            products_data.slice(0,80).map(product => 
                 <div className="product-card">
-                    <img src={product.api_featured_image}/>
+                    <Link to={`/single-product/${product.id}`}><img src={product.api_featured_image}/></Link>
                     <h4>{product.name}</h4>
                     <div className="icons-card">
                     <i><IoStar/></i>
