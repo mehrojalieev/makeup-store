@@ -27,7 +27,7 @@ const Brand = () => {
                 <div className="brand-box">
                     <img width={200} height={160} src="https://img.fragrancex.com/images/assets/product%20images/mont-blanc.jpg"/>
                     <Link>Montblanc</Link>
-                </div>
+                </div>  
                 <div className="brand-box">
                     <img width={200} height={160} src="https://img.fragrancex.com/images/assets/product%20images/dior.jpg"/>
                     <Link>Dior parfume</Link>
