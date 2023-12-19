@@ -29,28 +29,26 @@ main{
   height: 450px;
 }
 .slide-card{
-  text-align: center;
+  text-align: center ;
   display: flex;
-  flex-direction: column;
+  flex-direction: column !important;
   align-items: center !important;
-  justify-content: center;
+  justify-content: center !important;
   width: 330px;
   height: 300px;
   font-family: none;
   margin-top: 40px;
   img{
-    width: 180px;
-    height: 200px;
+    width: 190px;
+    height: 190px;
   }
   p{
-    font-size: 20px;
-    margin-top: 14px;
+    width: 140px;
+    font-size: 18px;
+    margin: 14px auto 0;
+    line-height: 26px;
   }
-  strong{
-    margin: 3px 0;
-    display: block;
-    @include f-style(16px, #000, 400);
-  }
+
 }
 
 

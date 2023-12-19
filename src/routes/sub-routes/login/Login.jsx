@@ -2,10 +2,6 @@ import { useRef, useState } from "react"
 import "./Login.scss"
 
 const Login = () => {
-
-    // const userData = JSON.parse(localStorage.getItem("user"))
-    // console.log(userData);
-
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 

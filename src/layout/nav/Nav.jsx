@@ -1,25 +1,24 @@
 import "./Nav.scss"
 import { FiShoppingCart } from "react-icons/fi";
-import { FaRegHeart, FaShoppingCart, FaHeart, FaRegUser, FaSearch  } from "react-icons/fa";
-
-import NavLogo from "../../assets/images/logo.svg"
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { FaSearch  } from "react-icons/fa";
+import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { connect, useSelector } from "react-redux";
 import { loadCurrency } from "../../redux/actions/currency-action";
-import { Container } from "../../utils/Utils";
+import {toast}from "react-toastify"
 
 const Nav = (props) => {
 
   const {pathname} = useLocation()
-
+  toast.success("Successfully",{
+    position: 'top-right',
+    
+   })
   // For Currency
   const [getCurrency, setGetCurrency] = useState('')
   console.log(getCurrency);
 
-
   const { currency_data } = useSelector(state => state.currency)
-
   useEffect(() => {
     props.loadCurrency(getCurrency)
   }, [getCurrency])
