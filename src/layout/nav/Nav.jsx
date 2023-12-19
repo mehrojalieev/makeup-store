@@ -1,5 +1,5 @@
 import "./Nav.scss"
-import { IoIosSearch } from "react-icons/io";
+import { FiShoppingCart } from "react-icons/fi";
 import { FaRegHeart, FaShoppingCart, FaHeart, FaRegUser, FaSearch  } from "react-icons/fa";
 
 import NavLogo from "../../assets/images/logo.svg"
@@ -41,10 +41,17 @@ const Nav = (props) => {
             </form>
 
           <div className="nav-action">
-            <div className="register-user">
-              <i><FaRegUser/></i>
-              <Link className="user-link" to="signup">Register</Link>
-            </div>
+              <Link className="user-link" to="signup">Sign In</Link>
+              <Link>Help</Link>
+              <select>
+                <option value="usd">USD</option>
+                <option value="rubl">RUBL</option>
+                <option value="uzs">UZS</option>
+              </select>
+              <Link className="nav-cart">
+              <i><FiShoppingCart/></i>
+                <p>Cart</p>
+              </Link>
           </div>
           </div>
     </nav>
@@ -52,11 +59,3 @@ const Nav = (props) => {
 }
 
 export default connect(null, { loadCurrency })(Nav)
-{/* <div className="nav__menu-container">
-  <ul className="nav__menu">
-    <li><NavLink className={({isActive}) => isActive ? "nav-link nav-link--active" : "nav-link"}>Home</NavLink></li>
-    <li><NavLink className={({isActive}) => isActive ? "nav-link nav-link--active" : "nav-link"}>Products</NavLink></li>
-    <li><NavLink className={({isActive}) => isActive ? "nav-link nav-link--active" : "nav-link"}>About</NavLink></li>
-    <li><NavLink className={({isActive}) => isActive ? "nav-link nav-link--active" : "nav-link"}>Contact </NavLink></li>
-  </ul>
-</div> */}

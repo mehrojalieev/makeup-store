@@ -1,7 +1,6 @@
 import { NavLink } from "react-router-dom"
 import { connect, useSelector } from "react-redux";
 import { loadProducts } from "../../redux/actions/product-action";
-import bannerImage from "../../assets/images/banner.png"
 import bannerForHead from "../../assets/images/bannerForHead.png"
 import Lock from "../../assets/images/lock.svg"
 import Trusted from "../../assets/images/trusted.svg"

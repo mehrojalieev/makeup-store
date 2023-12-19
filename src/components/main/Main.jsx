@@ -59,9 +59,12 @@ const Main = (props) => {
     <>
       <main>
 
-
+    <div className="main-title">
+      <h3>Best Sellers</h3>
+      <Link> See All</Link>
+    </div>
         <Swiper
-          slidesPerView={3}
+          slidesPerView={4}
           spaceBetween={30}
           centeredSlides={false}
           autoplay={{
@@ -75,17 +78,16 @@ const Main = (props) => {
           {
             products_data.slice(0,10).map(product => 
                 <SwiperSlide className="slide-card" key={product.id}>
-                    <img src={product.api_featured_image}/>
-                    <h4>{product.name}</h4>
-                    <div className="product-btn-action">
-                    <button className="addcart-btn">Add To Cart</button>
-                    <button>Like </button>
-                    </div>
+                   <img src={product.api_featured_image} alt="" />
+                   <p>{product.name}</p>
+                   <strong>By {product.brand}</strong>
+                   <strong>As low as {product.price}</strong>
                 </SwiperSlide>
               )
           }
 
         </Swiper>
+        
       </main>
     </>
   )
