@@ -5,6 +5,7 @@ import RouteController from './routes/RouteController';
 import {connect, useSelector } from 'react-redux';
 import { loadProducts } from './redux/actions/product-action';
 import Nav from './layout/nav/Nav';
+import { ToastContainer } from 'react-toastify';
 
 function App(props) {
 
@@ -17,6 +18,7 @@ function App(props) {
     <div className="App">
       <Nav/>
       <RouteController/>
+
     </div>
   );
 }

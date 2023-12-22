@@ -1,7 +1,7 @@
-import { useLocation } from "react-router-dom"
 import "./SignUp.scss"
-import { useEffect, useRef, useState } from "react"
-
+import { useRef, useState } from "react"
+import { FaEyeSlash, FaEye } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 
 const SignUp = () => {
@@ -13,10 +13,28 @@ const SignUp = () => {
 
   const submitBtn = useRef()
   const sbtBtn = submitBtn.current
+  const [showPassword, setShowPassword] = useState(false)
+  const [inputType, setInputType] = useState('password')
+
+  const toogleInputType = () => {
+    setShowPassword(!showPassword)
+    const newType = inputType === 'text' ? 'password' : 'text'
+    setInputType(newType)
+  }
 
 
   const handleRegisterUser = (e) => {
     e.preventDefault()
+    toast('🦄 Wow so easy!', {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
     let newUser = {
       username, email, number, password
     }
@@ -37,7 +55,8 @@ const SignUp = () => {
         <input onChange={(e) => setUsername(e.target.value)} autoComplete="off" type="text" id="username" name="username" placeholder="Enter username" className="form-control" />
         <input onChange={(e) => setEmail(e.target.value)} autoComplete="off" type="email" id="email" name="email" placeholder="Enter email" className="form-control" />
         <input onChange={(e) => setNumber(e.target.value)} autoComplete="off" type="number" id="number" name="number" placeholder="Enter number" className="form-control" />
-        <input onChange={(e) => setPassword(e.target.value)} autoComplete="off" type="password" id="password" name="password" placeholder="Enter password" className="form-control" />
+        <input onChange={(e) => setPassword(e.target.value)} autoComplete="off" type={inputType} id="password" name="password" placeholder="Enter password" className="form-control" />
+        <button className="eye-btn" onClick={toogleInputType}>{showPassword ? <FaEyeSlash /> : <FaEye />}</button>
         <button ref={submitBtn} type="submit" className="submit-btn">Submit</button>
       </form>
     </div>
