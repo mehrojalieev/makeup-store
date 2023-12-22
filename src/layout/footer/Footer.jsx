@@ -1,5 +1,4 @@
 import "./Footer.scss"
-import Flags from "../../assets/images/flags.svg"
 import { Container } from "../../utils/Utils"
 const Footer = () => {
   return (
@@ -50,16 +49,16 @@ const Footer = () => {
               <li>Site Map</li>
             </ul>
           </div>
-      <div className="footer__action-container">
-        <div className="form__action">
-          <h4>Join Our Coupon List</h4>
-          <p>Get the best deals and discounts on name brand fragrances and more.</p>
-          <form>
-            <input type="email" placeholder="Enter your email" />
-            <button>Sign Up</button>
-          </form>
-        </div>
-      </div>
+          <div className="footer__action-container">
+            <div className="form__action">
+              <h4>Join Our Coupon List</h4>
+              <p>Get the best deals and discounts on name brand fragrances and more.</p>
+              <form>
+                <input type="email" placeholder="Enter your email" />
+                <button>Sign Up</button>
+              </form>
+            </div>
+          </div>
 
         </div>
       </Container>
