@@ -1,19 +1,19 @@
 import "./Nav.scss"
 import { FiShoppingCart } from "react-icons/fi";
-import { FaSearch  } from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { connect, useSelector } from "react-redux";
 import { loadCurrency } from "../../redux/actions/currency-action";
-import {toast}from "react-toastify"
+import { toast } from "react-toastify"
 
 const Nav = (props) => {
 
-  const {pathname} = useLocation()
-  toast.success("Successfully",{
+  const { pathname } = useLocation()
+  toast.success("Successfully", {
     position: 'top-right',
-    
-   })
+
+  })
   // For Currency
   const [getCurrency, setGetCurrency] = useState('')
   console.log(getCurrency);
@@ -22,37 +22,50 @@ const Nav = (props) => {
   useEffect(() => {
     props.loadCurrency(getCurrency)
   }, [getCurrency])
-  return pathname.includes("/signup") || pathname.includes("/login") ? null : (
+  return (
     <nav>
-        <div className="sale-card">
-          <h3>EXTRA 15% OFF CLICK HERE</h3>
-        </div>
-    
+      {
+        pathname.includes("/signup") || pathname.includes("/login") ? null :
+          <div className="sale-card">
+            <h3>EXTRA 15% OFF CLICK HERE</h3>
+          </div>
+      }
 
-          <div className="nav__wrapper">
-          <div className="nav__logo" >
+
+      <div className="nav__wrapper">
+        <Link to={"/"} className="nav__logo" >
           <h1>Fragance</h1>
-          </div>
+        </Link>
 
-            <form  className="nav-form" action="">
-              <input type="text" placeholder="Search" />
-              <button><FaSearch /></button>
-            </form>
+        <form style={pathname.includes("/signup") || pathname.includes("/login") ? {visibility: "hidden" } : { display: "block" }}
+          className="nav-form" action="">
+          <input type="text" placeholder="Search" />
+          <button><FaSearch /></button>
+        </form>
 
-          <div className="nav-action">
-              <Link className="user-link" to="signup">Sign In</Link>
-              <Link>Help</Link>
-              <select>
-                <option value="usd">USD</option>
-                <option value="rubl">RUBL</option>
-                <option value="uzs">UZS</option>
-              </select>
-              <Link className="nav-cart">
-              <i><FiShoppingCart/></i>
-                <p>Cart</p>
-              </Link>
-          </div>
-          </div>
+        <div className="nav-action">
+          {
+             pathname.includes("/signup") || pathname.includes("/login") ? null : 
+             <Link className="user-link" to="signup">Sign In</Link>
+
+          }
+          <Link>Help</Link>
+          {
+            pathname.includes("/signup") || pathname.includes("/login") ? null :
+            <>
+                <select>
+                  <option value="usd">USD</option>
+                  <option value="rubl">RUBL</option>
+                  <option value="uzs">UZS</option>
+                </select>
+                <Link className="nav-cart">
+                  <i><FiShoppingCart /></i>
+                  <p>Cart</p>
+                </Link>
+              </>
+          }
+        </div>
+      </div>
     </nav>
   )
 }
