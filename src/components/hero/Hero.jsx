@@ -1,12 +1,12 @@
+import "./Hero.scss"
+import { FaStar } from "react-icons/fa";
 import { NavLink } from "react-router-dom"
-import { connect, useSelector } from "react-redux";
-import { loadProducts } from "../../redux/actions/product-action";
-import bannerForHead from "../../assets/images/bannerForHead.png"
 import Lock from "../../assets/images/lock.svg"
+import { connect, useSelector } from "react-redux";
 import Trusted from "../../assets/images/trusted.svg"
 import Delivery from "../../assets/images/deliver.svg"
-import { FaStar } from "react-icons/fa";
-import "./Hero.scss"
+import { loadProducts } from "../../redux/actions/product-action";
+import bannerForHead from "../../assets/images/bannerForHead.png";
 
 // SWIPER CONNECT
 import { Swiper, SwiperSlide } from 'swiper/react';
