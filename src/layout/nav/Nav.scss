@@ -24,11 +24,12 @@ nav{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 180px;
+    gap: 100px;
     background-color: var(--primary-color);
 }
 
 .nav__logo{
+    text-decoration: none;
     h1{
         color: #fff;
     }
@@ -41,10 +42,11 @@ nav{
     align-items: center;
     width: 600px;
     height: 35px;
-    background-color: #fff;
+    background-color: #ffffff;
     border-radius: 5px;
     overflow: hidden;
     input{
+        width: 100%;
         flex: 1;
         height: 100%;
         border: none;
@@ -65,35 +67,31 @@ nav{
 }
 
 
-.nav-link{
-    position: relative;
-    text-decoration: none;
-    font-family: var(--afacad-font);
-    @include f-style(20px, #181717, 550);
-    transition: 0.2s;
-    overflow: hidden;
-  
-    }
 
-
-
-//    .nav-link::before{
-//         width: 100%;
-//         height: 3px ;
-//         bottom: -2px;
-//         border-bottom: 1px solid rgb(214, 41, 41);
-//         position: absolute;
-//         content: '';        
-//    }
-.register-user{
+.nav-action{
     display: flex;
     align-items: center;
-    gap: 10px;
-    i{
-        @include f-style(20px, #ffffff, 600);
+    gap: 0px 30px;
+    a{
+        @include f-style(17px, #fff, 400);
+        text-decoration: none;  
     }
-    .user-link{
-        text-decoration: none;
-        @include f-style(19px, #ffffff, 600);
+    select{
+        outline: none;
+        border: none;
+        background: transparent;
+        font-size: 17px;
+        color: #fff;
+        option{
+            color: #000;
+        }
     }
 }
+.nav-cart{
+    display: flex;
+    align-items: center;
+    font-size: 17px;
+    gap: 8px;
+    i{margin-top: 4px;}
+}
+

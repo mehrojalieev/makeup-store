@@ -1,48 +1,65 @@
 import "./Footer.scss"
-import Flags from "../../assets/images/flags.svg"
 import { Container } from "../../utils/Utils"
 const Footer = () => {
   return (
     <footer>
       <Container>
         <div className="footer-wrapper">
-          <div className="footer-container">
-            <div className="footer-menu">
-              <ul>
-                <li>About</li>
-                <li>Contact</li>
-                <li>Cateogries</li>
-                <li>Location</li>
-              </ul>
-              <ul>
-                <li>Delivery</li>
-                <li>Contact</li>
-                <li>Cateogries</li>
-                <li>Location</li>
-              </ul>
-              <ul>
-                <li>About</li>
-                <li>Contact</li>
-                <li>Cateogries</li>
-                <li>Location</li>
-              </ul>
+          <div className="footer__menu-container">
+            <ul className="footer-menu">
+              <li>Shop</li>
+              <li>Best Sellers</li>
+              <li>New Arrivals</li>
+              <li>Celebrity Scents</li>
+              <li>Hard To Find</li>
+              <li>Testers</li>
+              <li>Travel Size Mini's</li>
+              <li>Perfume Samples</li>
+              <li>Cologne Samples</li>
+              <li>Holiday Sales</li>
+            </ul>
+            <ul className="footer-menu">
+              <li>More Ways To Shop</li>
+              <li>Deodorant</li>
+              <li>After Shave</li>
+              <li>Shower Gel</li>
+              <li>Body Cream</li>
+              <li>Pure Perfume</li>
+              <li>Body Lotions</li>
+              <li>Gift Sets</li>
+            </ul>
+            <ul className="footer-menu">
+              <li>Help</li>
+              <li>Order Status</li>
+              <li>Shipping Infol</li>
+              <li>Return Info</li>
+              <li>Contact Info</li>
+              <li>About Us</li>
+              <li>FAQ'S</li>
+              <li>Earn Rewards</li>
+            </ul>
+            <ul className="footer-menu">
+              <li>More Help</li>
+              <li>Affiliates</li>
+              <li>Wholesale Information</li>
+              <li>Customer Testimonials</li>
+              <li>Safe Shopping Guarantee</li>
+              <li>Blog</li>
+              <li>Privacy</li>
+              <li>Site Map</li>
+            </ul>
+          </div>
+          <div className="footer__action-container">
+            <div className="form__action">
+              <h4>Join Our Coupon List</h4>
+              <p>Get the best deals and discounts on name brand fragrances and more.</p>
+              <form>
+                <input type="email" placeholder="Enter your email" />
+                <button>Sign Up</button>
+              </form>
             </div>
-            <div className="footer-action">
-              <strong className="number-text">+99897848888</strong>
-              <p>You can write us a letter call us by phone</p>
-              <div className="email-action">
-                <input type="text" placeholder="Your email" />
-                <button>Send</button>
-              </div>
-            </div>
           </div>
-          <div className="flags">
-            <img src={Flags} alt="" />
-          </div>
-          <div className="copy-right">
-            <h3>MAKEUP™. BEAUTY WITHOUT LIMITS</h3>
-            <p>© MAKEUP 2021-2023</p>
-          </div>
+
         </div>
       </Container>
     </footer>

@@ -1,21 +1,24 @@
-.form-backdrop{
+.form-backdrop {
   width: 100%;
   height: 100vh;
   background-color: #483fe4;
   position: fixed;
 }
+
 .form-container {
   display: flex;
   flex-direction: column;
   gap: 20px 0;
   max-width: 450px;
-  margin:100px auto 0;
+  margin: 200px auto 0;
   padding: 20px;
+  position: relative;
   border: 1px solid #ccc;
   border-radius: 10px;
   border-radius: 5px;
   background-color: #f3f3f3;
-  h1{
+
+  h1 {
     text-align: center;
     color: #302aaf;
   }
@@ -30,18 +33,22 @@
   color: #000;
   background: transparent;
   outline: none;
-  transition: 0.2s  ;
-  &::placeholder{
+  transition: 0.2s;
+
+  &::placeholder {
     color: #302aaf;
   }
-  &:hover{
-    box-shadow:  0 0 7px  #302aaf;
+
+  &:hover {
+    box-shadow: 0 0 7px #302aaf;
   }
-  &:focus{
-    box-shadow:  0 0 5px  #302aaf;
+
+  &:focus {
+    box-shadow: 0 0 5px #302aaf;
   }
 }
-input[type=number]::-webkit-inner-spin-button{
+
+input[type=number]::-webkit-inner-spin-button {
   appearance: none;
 }
 
@@ -63,7 +70,16 @@ input[type=number]::-webkit-inner-spin-button{
 }
 
 
-.submitBtnstyle{
+.submitBtnstyle {
   cursor: not-allowed;
   opacity: 0.7;
+}
+
+.eye-btn {
+  position: absolute;
+  border: none;
+  background: transparent;
+  bottom: calc(23% - 4px);
+  right: 30px;
+  font-size: 16px;
 }
