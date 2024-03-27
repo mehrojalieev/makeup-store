@@ -5,14 +5,15 @@
 }
 nav{
     width: 100%;
+    background-color: var(--primary-color);
 }
 .sale-card{
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 45px;
     background-color: var(--primary-bold-color);
+    height: 45px;
     h3{
         @include f-style(16px, #fff, 700);
         letter-spacing: 1px;
@@ -23,9 +24,8 @@ nav{
     height: 80px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 100px;
-    background-color: var(--primary-color);
+    justify-content: space-between;
+    column-gap: 1rem;
 }
 
 .nav__logo{
@@ -35,13 +35,11 @@ nav{
     }
 }
 
-
-
 .nav-form{
     display: flex;
     align-items: center;
     width: 600px;
-    height: 35px;
+    height: 40px;
     background-color: #ffffff;
     border-radius: 5px;
     overflow: hidden;
@@ -61,12 +59,10 @@ nav{
         height: 100%;
         width: 35px;
         border: none;
-        font-size: 18px;
+        font-size: 16px;
         background-color: var(--warning-color);
     }
 }
-
-
 
 .nav-action{
     display: flex;
@@ -81,6 +77,7 @@ nav{
         border: none;
         background: transparent;
         font-size: 17px;
+        cursor: pointer;
         color: #fff;
         option{
             color: #000;
@@ -95,3 +92,123 @@ nav{
     i{margin-top: 4px;}
 }
 
+// RESPONSIVE STYLES 
+@media only screen and (max-width: 1130px){
+    .nav-form{
+        max-width: 500px;
+    }
+    .nav-action{
+        column-gap: 20px;
+        a{
+        @include f-style(15px, #fff, 400);
+        };
+        select{
+            font-size: 16px;
+        }
+
+    }
+}
+
+@media only screen and (max-width:980px){
+    .nav__wrapper{
+        position: relative;
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: .7rem;
+        height: fit-content;
+        padding-bottom: .8rem;
+    }
+    .nav__logo{
+        font-size: 20px;
+    }
+    .nav-form{
+        max-width: 100%;
+        height: 37px;
+        width: 100% !important;
+    }
+    .nav-action{
+        width: 100%;
+        justify-content: flex-end;
+        column-gap: 3rem;
+        a{
+            @include f-style(17px, #fff, 400);
+
+        }
+        .nav-cart{
+            position: absolute;
+            top: 8%;
+            font-size: 18px;
+             column-gap: 12px;
+             i{font-size: 20px;}
+        }
+    }
+}
+
+@media only screen and (max-width: 460px){
+    .nav__logo{
+        font-size: 16px;
+    }
+    .nav-form{
+        height: 34px;
+        input{
+            text-indent: 10px;
+            @include f-style(17px, #000, 520);
+        }
+        button{
+            width: 40px;
+            font-size: 15px;
+            background-color: var(--warning-color);
+        }
+    }
+    .nav-action{
+        justify-content: center;
+        column-gap: 3rem;
+        a{
+            @include f-style(16px, #fff, 400);
+
+        }
+        .nav-cart{
+            top: 6%;
+            right: 0;
+            font-size: 16px;
+             column-gap: 8px;
+             i{font-size: 17px;}
+        }
+    }
+ 
+}
+@media only screen and (max-width: 295px){
+    .sale-card{
+        h3{
+            letter-spacing: 0;
+        @include f-style(14px, #fff, 500);
+            
+        }
+    }
+    .nav__logo{
+        font-size: 14px;
+    }
+    .nav-form{
+        height: 30px;
+        input{
+            text-indent: 7px;
+            @include f-style(16px, #000, 520);
+        }
+     
+    }
+    .nav-action{
+        column-gap: 1.5rem;
+        a{
+            @include f-style(14px, #fff, 400);
+
+        }
+        .nav-cart{
+            top: 6%;
+            right: 0;
+            font-size: 16px;
+             column-gap: 8px;
+             i{font-size: 16px;}
+        }
+    }
+ 
+}

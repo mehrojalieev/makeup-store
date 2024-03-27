@@ -10,12 +10,12 @@ import "./Home.scss"
 const Home = () => {
   return (
     <div className="home">
-         <Hero/> 
-         <Brand/>
-        <Main/>
-        <About/>
-        <Review/>
-        <Footer/>
+         {/* <Hero/>  */}
+         {/* <Brand/> */}
+        {/* <Main/> */}
+        {/* <About/> */}
+        {/* <Review/> */}
+        {/* <Footer/> */}
     </div>
   )
 }

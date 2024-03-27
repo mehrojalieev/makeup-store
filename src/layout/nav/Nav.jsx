@@ -1,27 +1,29 @@
 import "./Nav.scss"
-import { FiShoppingCart } from "react-icons/fi";
-import { FaSearch } from "react-icons/fa";
-import { Link, useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { connect, useSelector } from "react-redux";
-import { loadCurrency } from "../../redux/actions/currency-action";
 import { toast } from "react-toastify"
+import { FaSearch } from "react-icons/fa";
+import { useEffect, useState } from "react";
+import { Container } from "../../utils/Utils";
+import { FiShoppingCart } from "react-icons/fi";
+import { connect, useSelector } from "react-redux";
+import { Link, useLocation } from "react-router-dom";
+import { loadCurrency } from "../../redux/actions/currency-action";
 
 const Nav = (props) => {
-
   const { pathname } = useLocation()
+  const { currency_data } = useSelector(state => state.currency)
+
+  // HOOKS
+  const [getCurrency, setGetCurrency] = useState('')
+
   toast.success("Successfully", {
     position: 'top-right',
 
   })
-  // For Currency
-  const [getCurrency, setGetCurrency] = useState('')
-  console.log(getCurrency);
 
-  const { currency_data } = useSelector(state => state.currency)
   useEffect(() => {
     props.loadCurrency(getCurrency)
   }, [getCurrency])
+
   return (
     <nav>
       {
@@ -31,14 +33,15 @@ const Nav = (props) => {
           </div>
       }
 
+<Container>
 
       <div className="nav__wrapper">
         <Link to={"/"} className="nav__logo" >
           <h1>Fragance</h1>
         </Link>
 
-        <form style={pathname.includes("/signup") || pathname.includes("/login") ? {visibility: "hidden" } : { display: "block" }}
-          className="nav-form" action="">
+        <form style={pathname.includes("/signup") || pathname.includes("/login") ? {visibility: "hidden" } : { display: "flex" }}
+          className="nav-form">
           <input type="text" placeholder="Search" />
           <button><FaSearch /></button>
         </form>
@@ -66,6 +69,8 @@ const Nav = (props) => {
           }
         </div>
       </div>
+</Container>
+
     </nav>
   )
 }
