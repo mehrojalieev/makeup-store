@@ -19,6 +19,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import { Link } from "react-router-dom";
+import { Container } from "../../utils/Utils";
 
 
 const Main = (props) => {
@@ -61,6 +62,8 @@ const Main = (props) => {
   return (
     <>
       <main>
+        <Container>
+
 
         <div className="main-title">
           <h3>Best Sellers</h3>
@@ -74,6 +77,7 @@ const Main = (props) => {
             delay: 2000,
             disableOnInteraction: false,
           }}
+          
           navigation={true}
 
           modules={[Autoplay, Pagination, Navigation]}
@@ -107,6 +111,7 @@ const Main = (props) => {
 
 
         </Swiper>
+        </Container>
 
       </main>
     </>
