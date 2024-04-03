@@ -1,6 +1,15 @@
 import "./Footer.scss"
 import { Container } from "../../utils/Utils"
+import { SlArrowDown, SlArrowUp } from "react-icons/sl";
+import { Link } from "react-router-dom";
+import { useState } from "react";
+
 const Footer = () => {
+  const [openShopMenu, setOpenShopMenu] = useState(false)
+  const [openMenuMore, setOpenMenuMore] = useState(false)
+  const [openMenuHelp, setOpenMenuHelp] = useState(false)
+  const [openMenuMoreHelp, setOpenMenuMoreHelp] = useState(false)
+
   return (
     <footer>
       <Container>
@@ -49,6 +58,118 @@ const Footer = () => {
               <li>Site Map</li>
             </ul>
           </div>
+
+
+        <div className="responsive__footer-wrapper">
+              <div className="menu-dropdown">
+                  <div onClick={() => setOpenShopMenu(!openShopMenu)} className="dropdown-header">
+                    <h3>Shop</h3>
+                    <i>{openShopMenu ? <SlArrowUp/> : <SlArrowDown/>}</i>
+                  </div>
+                  <ul style={openShopMenu ? {display: 'flex'} : {display: 'none'}} className="dropdown__menu-items">
+                     <li>
+                      <Link className="item-link">Best Sellers</Link>
+                     </li>
+                     <li>
+                      <Link className="item-link">New Arriwals</Link>
+                     </li>
+                     <li>
+                      <Link className="item-link">Celebrity Scents</Link>
+                     </li>
+                     <li>
+                      <Link className="item-link">Hard To Find</Link>
+                     </li>
+                     <li>
+                      <Link className="item-link">Testers</Link>
+                     </li>
+                  </ul>
+              </div>
+              <div className="menu-dropdown">
+                  <div onClick={() => setOpenMenuMore(!openMenuMore)} className="dropdown-header">
+                    <h3>More Ways to Shop</h3>
+                    <i>{openMenuMore ? <SlArrowUp/> : <SlArrowDown/>}</i>
+                  </div>
+                  <ul style={openMenuMore ? {display: 'flex'} : {display: 'none'}} className="dropdown__menu-items">
+                     <li>
+                      <Link className="item-link">Deodorant</Link>
+                     </li>
+                     <li>
+                      <Link className="item-link">After Shave</Link>
+                     </li>
+                     <li>
+                      <Link className="item-link">Shower Gel</Link>
+                     </li>
+                     <li>
+                      <Link className="item-link">Body Cream</Link>
+                     </li>
+                     <li>
+                      <Link className="item-link">Pure PErfume</Link>
+                     </li>
+                     <li>
+                      <Link className="item-link">Gift Sets</Link>
+                     </li>
+                  </ul>
+              </div>
+              <div className="menu-dropdown">
+                  <div onClick={() => setOpenMenuHelp(!openMenuHelp)} className="dropdown-header">
+                    <h3>Help</h3>
+                    <i>{openMenuHelp ? <SlArrowUp/> : <SlArrowDown/>}</i>
+                  </div>
+                  <ul style={openMenuHelp ? {display: 'flex'} : {display: 'none'}} className="dropdown__menu-items">
+                     <li>
+                      <Link className="item-link">Order Status</Link>
+                     </li>
+                     <li>
+                      <Link className="item-link">Shipping Info</Link>
+                     </li>
+                     <li>
+                      <Link className="item-link">Return Info</Link>
+                     </li>
+                     <li>
+                      <Link className="item-link">Contact Info</Link>
+                     </li>
+                     <li>
+                      <Link className="item-link"> About Us</Link>
+                     </li>
+                     <li>
+                      <Link className="item-link">FAQ'S</Link>
+                     </li>
+                     <li>
+                      <Link className="item-link">Earn Rewards</Link>
+                     </li>
+                  </ul>
+              </div>
+              <div className="menu-dropdown">
+                  <div onClick={() => setOpenMenuMoreHelp(!openMenuMoreHelp)} className="dropdown-header">
+                    <h3>More Help</h3>
+                    <i>{openMenuMoreHelp ? <SlArrowUp/> : <SlArrowDown/>}</i>
+                  </div>
+                  <ul style={openMenuMoreHelp ? {display: 'flex'} : {display: 'none'}} className="dropdown__menu-items">
+                     <li>
+                      <Link className="item-link">Affiliates</Link>
+                     </li>
+                     <li>
+                      <Link className="item-link">Wholesale Information</Link>
+                     </li>
+                     <li>
+                      <Link className="item-link">Customer Testimonials</Link>
+                     </li>
+                     <li>
+                      <Link className="item-link">Safe Shopping Guarantee</Link>
+                     </li>
+                     <li>
+                      <Link className="item-link">Blog</Link>
+                     </li>
+                     <li>
+                      <Link className="item-link">Privacy</Link>
+                     </li>
+                     <li>
+                      <Link className="item-link">Site Map</Link>
+                     </li>
+                  </ul>
+              </div>
+        </div>
+
           <div className="footer__action-container">
             <div className="form__action">
               <h4>Join Our Coupon List</h4>
