@@ -21,7 +21,7 @@ const SingleProduct = (props) => {
   const [randomNumb, SetnandomNumb] = useState(Math.floor(Math.random() * 20));
 
   useEffect(() => {
-    instance(`/products/${id + ".json"}`)
+    instance(`/parfume/${id}`)
       .then(response => {
         console.log(response.data);
         setSingleProductData(response.data)
@@ -35,16 +35,16 @@ const SingleProduct = (props) => {
   }
 
 
-  const imgCard = useRef()
-  console.log(imgCard);
+  // const imgCard = useRef()
+  // console.log(imgCard);
 
-  const handleChangeColor = (colors) => {
-    imgCard.current.style = `border: 3px solid ${colors}; border-radius: 10px` 
-  } 
+  // const handleChangeColor = (colors) => {
+  //   imgCard.current.style = `border: 3px solid ${colors}; border-radius: 10px` 
+  // } 
 
   return (
     <div className="product__wrapper">
-      <div className="product-content">
+      {/* <div className="product-content">
         <h3>{singleProductData.name}</h3>
         <p>{(singleProductData.description?.slice(0, 300))}</p>
         <div className="icons">
@@ -89,7 +89,7 @@ const SingleProduct = (props) => {
         <div className="chegirma">
           <span>Get</span> <b>15%</b> <span>Off</span>
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }

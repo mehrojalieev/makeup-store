@@ -1,0 +1,11 @@
+.product-card{
+    max-width: 280px !important;
+    width: 100%;
+    height: fit-content;
+    padding: 1rem;
+    img{
+        width: 200px;
+        height: 180px;
+        object-fit: contain;
+    }
+}

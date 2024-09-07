@@ -1,0 +1,7 @@
+.all__products-wrapper{
+    margin-top: 3rem !important;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    gap: 1.6rem 1.2rem;
+}

@@ -28,10 +28,8 @@ const Main = (props) => {
   // console.log(getParfumes);
 
   const { products_data } = useSelector(state => state.products)
-  console.log(products_data);
 
   const { currency_data } = useSelector(state => state.currency)
-  console.log(currency_data);
 
 
 
