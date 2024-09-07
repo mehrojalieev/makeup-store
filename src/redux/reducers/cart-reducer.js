@@ -4,7 +4,6 @@ const initialState = {
 
 
 const loadCartsReducer = (state = initialState, action) => {
-    console.log(action?.payload?.getCart);
     switch(action.type){
         case "ADD_TO_CART": 
         return{

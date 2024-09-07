@@ -13,10 +13,8 @@ const Cart = (props) => {
   const [randomNumb, SetnandomNumb] = useState(Math.floor(Math.random() * 30))
 
   const { cart_data } = useSelector(state => state.carts)
-  console.log(cart_data);
 
   const hanleRemoveCart = (carts) => {
-    console.log(carts);
   }
 
   return (

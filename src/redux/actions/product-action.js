@@ -12,7 +12,7 @@ const load__products = (products) => {
 
 
 const loadProducts = () => async dispatch => {
-    instance.get("/products.json")
+    instance.get("/parfumes")
         .then(response => {
             dispatch(load__products(response.data))
         })

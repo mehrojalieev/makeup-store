@@ -1,79 +1,48 @@
 import "./Hero.scss"
-import { FaStar } from "react-icons/fa";
-import { NavLink } from "react-router-dom"
-import Lock from "../../assets/images/lock.svg"
+import { Link } from "react-router-dom"
 import { connect, useSelector } from "react-redux";
-import Trusted from "../../assets/images/trusted.svg"
-import Delivery from "../../assets/images/deliver.svg"
+import Banner from "../../assets/images/banner.webp"
+import { FaLongArrowAltRight, FaStar } from "react-icons/fa";
 import { loadProducts } from "../../redux/actions/product-action";
-import bannerForHead from "../../assets/images/bannerForHead.png";
 
-// SWIPER CONNECT
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import { useEffect, useState } from "react";
-import db from "../../categories/categories.json"
 const Hero = (props) => {
-
-  const typeOf = Object.keys(db)
-
-  const categories = ["pencil", "lipstick", "liquid", "", null, "powder", "lip_gloss", "gel", "cream", "palette", "concealer", "highlighter", "bb_cc", "contour", "lip_stain", "mineral"]
 
   useEffect(() => {
     props.loadProducts()
   }, [])
 
-  const { products_data } = useSelector(state => state.products)
 
   return (
-    <header>
+    <section className="hero">
       <div className="hero__navbar">
         <div className="hero__nav-icons">
-          <i><FaStar/></i>
-          <i><FaStar/></i>
-          <i><FaStar/></i>
-          <i><FaStar/></i>
-          <i><FaStar/></i>
+          <i><FaStar /></i>
+          <i><FaStar /></i>
+          <i><FaStar /></i>
+          <i><FaStar /></i>
+          <i><FaStar /></i>
         </div>
         <p>over 20 million customers</p>
       </div>
-  
 
-      <div className="hero__banner">
-        <Swiper
-         autoplay={{delay: 3000}}
-         speed={1300}
-         slidesPerView={1}
-         slidesPerGroup={1}
-         loop={true}
-         navigation={true}
-         modules={[Autoplay, Pagination, Navigation]}
-          className="mySwiper hero-swiper"
-        >
-          <SwiperSlide data-swiper-autoplay="2000" className="swiper-card"><img src="https://i.makeupstore.uz/c/cf/cfpcwugzzwxw.jpg" alt="" /></SwiperSlide>
-          <SwiperSlide data-swiper-autoplay="2000" className="swiper-card"><img src="https://i.makeupstore.uz/l/lh/lhmzvn7e56y0.jpg" alt="" /></SwiperSlide>
 
-        </Swiper>
+      <div className="hero-banner">
+        <img src={Banner} alt="banner" />
+        <div className="hero__banner-contents">
+          <h3>Shop Back to School Deals</h3>
+          <p>At FragranceX.com, our mission is to provide you with the largest selection of perfumes and colognes at the lowest prices.</p>
+          <div className="content-btns">
+            <Link to="/products" className="btn-link">SHOP ALL PERFUMES <i><FaLongArrowAltRight /></i> </Link>
+            <Link to="/products" className="btn-link">SHOP ALL COLOGNES <i><FaLongArrowAltRight /></i> </Link>
+          </div>
+          <p className="shipping-text">Free Shipping</p>
+        </div>
       </div>
 
-          <div className="hero__feature">
-              <div className="feature-card">
-                <img width={65} height={65} src={Lock} alt="Lock" />
-                <p> Safe & secury Checkout </p>
-              </div>
-              <div className="feature-card">
-                <img width={65} height={65} src={Trusted} alt="Lock" />
-                <p> 100% authentic fragrances </p>
-              </div>
-              <div className="feature-card">
-                <img width={65} height={65} src={Delivery} alt="Lock" />
-                <p>Items Ship Same Day</p>
-              </div>
-          </div>
 
-    </header>
+
+    </section>
   )
 }
 

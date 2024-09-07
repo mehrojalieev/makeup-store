@@ -21,7 +21,6 @@ const load_carts = (getCart) => {
 
 
 const loadCarts = (getCart) => async dispatch => {
-    console.log(getCart);
     dispatch(load_carts(getCart))
 }
 

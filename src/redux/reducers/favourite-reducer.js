@@ -9,7 +9,6 @@ const favouriteReducer = (state = initialState, {type, payload}) => {
     //     liked.liked_id === payload.favourite_product.liked_id
         
     //     )
-    console.log(payload);
     switch(type){
         case "FAVOURITE":
             return{
